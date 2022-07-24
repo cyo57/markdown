@@ -1,0 +1,3 @@
+# 配置请参考：https://www.yuque.com/waquehq/docs/configuration
+repo: 'cyo57/ze5k75'
+pattern: '**/*.md'
