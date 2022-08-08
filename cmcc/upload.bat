@@ -1,2 +1,0 @@
-waque upload
-pause
