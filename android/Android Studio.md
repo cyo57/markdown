@@ -1,5 +1,7 @@
 # Android Studio
 
+阅读前建议学习CSS
+
 ## Hello World
 
 ### 更新
@@ -117,8 +119,42 @@ Project 视图
 
 更改大小, 文本颜色以及其他属性, 例如不同的字体
 
-选择 **Component Tree** 的 `TextView`, 找到 **Attributes** 窗口的 **Common Attributes**
+选择 **Component Tree** 的 `TextView`, 找到 **Attributes** 窗口的 **Common Attributes**, 然后修改属性, 比如 **fontFamily**, **textSize**, **textColor**
 
-修改属性, 比如 **fontFamily**, **textSize**, textColor
+**dp** 是屏幕上距离的度量单位一样，**sp** 是字体大小的度量单位
 
+### 添加 ImageView
 
+添加图片资源 **View > Tool Window > Resource Manager**
+
+确认图片位于应用的 **drawable** 文件夹中
+
+如果在应用中展示图片, 需要有一个显示位置, 可以用 `ImageView` 显示图片. 接下来调整图片的位置和大小.
+
+布局编辑器中拖动时, **Design** 视图中的粉色边框表示放置 `ImageView` 的屏幕边界. 但 `ConstraintLayout` 中的 `Views` 需要具有水平和垂直约束条件. 可在 **Attributes** 窗口中 **Constraint Widght **底部的 **+** 添加约束条件, 或者拖动小圆球.
+
+此时图片居中, 但未占用整个屏幕.
+
+在 **Constraint Widget** 的 **Constraints** 不分, 设置 **layout** 和 **scaleType**. 需要注意 **Component Tree** 的列表从上到下绘制, 即最后一个 View 将显示于最上层
+
+### 采用规范的编码
+
+根据上文操作添加 `TextViews` 时, Android Studio 出现警告标记.
+
+#### 翻译
+
+务必注意, 应用可能翻译成其他语言. 硬编码是字符串直接在应用代码中写入的字符串, 难以翻译成其他语言, 也很难在应用中重复使用. 我们可以通过"将字符串提取到资源文件中"解决此问题, 也就是将字符串放在一个文件中, 并未文件命名, 需要时使用名称即可. 即使更改字符串, 或翻译字符串, 名称仍然不变.
+
+- 点击橙色警告, 查看 **Suggested Fix** 并 点击 **Fix**
+
+- **Resource name** 表示字符串所用的名称
+  
+  **Resource value** 表示字符串实际的内容
+
+- 在 **Extract Resource** 中修改 **Resource name** 为小写名称, 例如 **hello_world_text** , 其中单词用下划线分割.
+
+- 打开 **strings.xml (app > res > values > strings.xml)**, 可查找到刚刚创建的字符串资源
+
+#### 无障碍
+
+关我屁事
