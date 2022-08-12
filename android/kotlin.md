@@ -188,3 +188,105 @@ class Dice{
     }
 }
 ```
+
+### 类的参数
+
+并非所有骰子都是六个面, 我们如果不定义 `Dice` 的面数, 而在蓝图中设置为变量, 则不必更改现有 `Dice` 对象实例的属性.
+
+```kotlin
+fun main(){
+    val myDice = Dice(66)
+    println(myDice.roll())
+}
+
+class Dice(val sides: Int){
+    fun roll(): Int{
+        var randomNum = (1 .. sides).random()
+        return randomNum
+    }
+}
+```
+
+### 规范的编码
+
+保持尽量简洁, 我们可以去掉 `randomNum` 变量并直接返回数字
+
+```kotlin
+fun main(){
+    val myDice = Dice(66)
+    println(myDice.roll())
+}
+
+class Dice(val sides: Int){
+    fun roll(): Int{
+        return (1 .. sides).random()
+    }
+}
+```
+
+> 更改代码使其更简洁、高效或易于阅读和理解称为“重构”。这就像写一篇文章，先写一份包含所有信息的初稿，然后再对文字进行修改和提炼。
+
+### 总结
+
+- `IntRange` , 数列, `(1 .. 6)`
+
+- `random()`, 在数列取随机
+
+- 类, 类的函数, 类的属性, 类的接收参数
+
+- `return`
+
+### 练习
+
+#### 为上文的 `Dice` 添加颜色属性
+
+```kotlin
+fun main(){
+    val myDice = Dice(66, "blue")
+    println(myDice.roll())
+}
+
+class Dice(val sides: Int, val color: String){
+    fun roll(): String{
+        return "面数为${sides}的${color}骰子点数为${(1 .. sides).random()}"
+    }
+}
+```
+
+#### 创建 `Coin` 类, 使其可翻转, 并抛出多个硬币
+
+```kotlin
+fun main(){
+    var myCoin = Coin()
+    var myCoin2 = Coin()
+    println(myCoin.toss())
+    println(myCoin2.toss())
+}
+
+class Coin{
+    var status = 0
+    fun toss(): Int{
+        return (0..1).random()
+    }
+}
+```
+
+## 创建交互式应用
+
+使用 Android Studio 的布局编辑器构建布局, 然后编写 Kotlin 代码处理点击 `Button` 时发生的情况
+
+要点
+
+- 添加 `Button`
+
+- `Button` 行为
+
+- `Activiry` 代码
+
+- `Toast` 消息
+
+- 应用运行时更新 `TextView`
+
+### [转至Android Studio](Android Studio.md)
+
+<a href="Android Studio.md">Test</a>
