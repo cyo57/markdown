@@ -313,3 +313,94 @@ rollButton.setOnClickListener { rollDice() }
 ### 练习
 
 在应用中一次操作两个骰子, 并显示在不同的 TextViews 中
+
+## 向应用添加图片
+
+学习更新 `ImageView`, 在应用中更新屏幕上的图片
+
+向添加 `TextView` 一样添加 `ImageView` 并添加约束条件, **Component Tree** 会看到一条警告, 提示 `ImageView` 的内容, 此处先不做处理, 之后将在 Koitlin 代码中进行更改
+
+### 添加图片资源
+
+在 Android Studio 中, 依次点击 **View > Tool Windows > Resource Manager** , 或者点击 **Project** 左侧的 **Resource Manager**
+
+点击 **\+** , 选择 **Import Drawables**
+
+> **重要提示**！- 您将能够在 Kotlin 代码中通过这些图片的资源 ID 查看它们：
+> 
+> - `R.drawable.dice_1`
+> - `R.drawable.dice_2`
+> - `R.drawable.dice_3`
+> - `R.drawable.dice_4`
+> - `R.drawable.dice_5`
+> - `R.drawable.dice_6`
+
+### 使用图片资源
+
+#### 替换示例图片
+
+- 在 **Disign Editor** 中 选择 `ImageView`.
+
+- **Declared Attributes** 部分的 **Attributes** 中, 找到 **scrCompat**. 注意此属性为仅仅在AS的 **Design** 视图中看到的资源, 实际运行不会看到图片, 将其设置为骰子图片资源
+
+哎呦我去, `ImageView` 居然占满了屏幕, 接下来调整 `ImageView` 的宽高, 确保不遮挡 `Button`
+
+在**Constraints Widget** 下的 **Attributes** 窗口中, 默认 **layout_width** 和 **layout_height** 为 **wrap_content**. 这意味着宽高与原图片保持一致. 显然这对我们的屏幕来说太大了
+
+- 手动修改 `ImageView` 的宽高, 并调整与其他元素的约束让视图更美观
+
+> 使用密度无关像素 dp 作为尺寸单位, 可在不同分辨率的设备适当缩放图片
+
+#### 点击按钮改变图片
+
+首先将我们已删除的 `TextView` 代码也移除
+
+- `MainActivity.kt` 中的 `R.id.textview` 已无法被识别
+
+- 任何引用 `TextView` 的代码都移除
+
+- 创建类型为 `ImageView` 的新变量, 并设置为与布局中的 `ImageView` 相同. 使用 `findViewById()` 方法, 将 `R.id.imageView` 作为参数.
+
+```kotlin
+val diceImage: ImageView = findViewById(R.id.imageView)
+```
+
+我们使用 `when`  使骰子图片对应
+
+```kotlin
+when (resultDice) {
+    1 -> imageDice.setImageResource(R.drawable.dice_1)
+    2 -> imageDice.setImageResource(R.drawable.dice_2)
+    3 -> imageDice.setImageResource(R.drawable.dice_3)
+    4 -> imageDice.setImageResource(R.drawable.dice_4)
+    5 -> imageDice.setImageResource(R.drawable.dice_5)
+    6 -> imageDice.setImageResource(R.drawable.dice_6)
+}
+```
+
+但每种情况唯一改变的是值而已, 我们继续优化代码
+
+```kotlin
+val imageRes = when (resultDice) {
+    1 -> R.drawable.dice_1
+    2 -> R.drawable.dice_2
+    3 -> R.drawable.dice_3
+    4 -> R.drawable.dice_4
+    5 -> R.drawable.dice_5
+    else -> R.drawable.dice_6
+}
+```
+
+`when` 表达式实际上可以返回一个值, 但 `when` 必须涵盖所有情况, 我们需要添加一个 `else` 分支即可
+
+到此为止, 我们的应用已经可以使用, 但我们发现首次启动应用时 `ImageView` 没有更新, 是空白内容. 我们在 `onCreate` 方法中调用一次 `rollDice()` 以解决此问题
+
+#### 添加代码注释
+
+### [官方示例]([GitHub - google-developer-training/android-basics-kotlin-dice-roller-with-images-app-solution](https://github.com/google-developer-training/android-basics-kotlin-dice-roller-with-images-app-solution))
+
+### 总结
+
+学习使用 `setImageResource()` 更改 `ImageView`
+
+使用 `if else` 和 `when`

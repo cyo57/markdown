@@ -289,4 +289,38 @@ class Coin{
 
 ### [转至Android Studio](Android Studio.md)
 
-<a href="Android Studio.md">Test</a>
+## 条件行为
+
+### if 语句
+
+```kotlin
+fun main() {
+    val num = 4
+    if (num > 4) {
+        println("The variable is greater than 4")
+    } else if (num == 4) {
+        println("The variabble is equal to 4")
+    } else {
+        println("The variable is less than 4")
+    }
+}
+```
+
+> 在 if-else 代码块中, 只能有一个 `if` 和 `else`, 但之间可以有任意数量的 `else if`
+> 
+> 常用的运算符, 例如 `<`, `<=`, `==`. 返回 `boolean` 类型
+
+### when 语句
+
+针对不同的结果很常见, `else if` 将会有n个. 为了提高可读性, Kotlin 提供了 `when` 语句
+
+```kotlin
+val luckyNumber = 4
+when (rollResult) {
+    luckyNumber -> println("Lucky")
+    1 -> println("You rolled a 1.")
+    2 -> println("You rolled a 2.")
+}
+```
+
+输出内容与堆叠 `else if` 效果相同, 但可读性更高
