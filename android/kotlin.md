@@ -324,3 +324,239 @@ when (rollResult) {
 ```
 
 输出内容与堆叠 `else if` 效果相同, 但可读性更高
+
+## 类和继承
+
+> - 类层次结构
+> 
+> - 子级或子类
+> 
+> - 父级, 父类, 基类
+> 
+> - 根类或顶级类
+> 
+> - 继承
+
+### 继承
+
+例如 Android 中有一个 `View` 类, 表示屏幕上一个矩形区域. `TextView` 类是 `View` 类的子类. `EditText` 和 `Button` 是 `TextView` 的子级.
+
+### 创建抽象类
+
+包含其所有子类通用的属性和函数. 如果属性的值及函数的实现情况未知, 则可以将其作为抽象类.
+
+```kotlin
+abstract class Dwelling(){
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+}
+```
+
+我们添加建筑材料, 人数 属性
+
+`abstract` 关键字则表示此处不会定义
+
+所有房子都有一定的人数, 直接在父类中定义属性, 以便所有子类使用. 
+添加住客人数的私有属性, 并设置为私有. (此处设置为 `var` , 因为人数可能会变化)
+
+```kotlin
+abstract class Dwelling(private var residents: Int){
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+}
+```
+
+`residents` 属性使用 `private` 关键字进行了标记. 表示 `residents` 属性仅对此类可见(并且只能在此类中使用). 如果不指定则默认为 `public`
+
+定义完成容量和人数后, 添加一个 `hasRoom()` 用于确定房间能否继续容纳住客
+
+```kotlin
+abstract class Dwelling(private var residents: Int){
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+    
+    fun hasRoom(): Boolean {
+        return capacity > residents
+    }
+}
+```
+
+### 创建子类
+
+在父类下, 创建一个 `SquareCabin` 的类. 并指明此类与基类相关, 表明拓展自 `Dwelling` 类. 因为 `SquareCabin` 将提供抽象部分的实现
+
+注意传入父类需要的参数, 此处我们使用灵活的实现. 不要将 `residents` 声明为 `val,`, 因为在重复使用父类 `Dwelling` 中声明的属性
+
+```kotlin
+class SquareCabin(residents: Int) : Dwelling(residents)
+```
+
+> **注意**：使用这些类定义后，系统会在后台执行许多操作。
+> 
+> 在类标头中，您会看到 `class SquareCabin(residents: Int) ...`
+> 
+> 这实际上是 `class SquareCabin constructor(residents: Int) ...` 的简写形式
+> 
+> 当您通过某个类创建对象实例时，系统会调用 `constructor`。例如，当您调用 `SquareCabin(4)` 时，系统会调用 `SquareCabin` 的 `constructor`，以初始化对象实例。
+> 
+> `constructor` 会根据相应类中的所有信息（包括传入的参数）构建实例。当某个类从父级继承属性和函数时，`constructor` 会调用父类的 `constructor`，以完成对象实例的初始化。
+> 
+> 因此，当您使用 `SquareCabin(4)` 创建实例时，系统将执行 `SquareCabin` 的 `constructor`，由于继承关系，同时还会执行 `Dwelling` 构造函数。`Dwelling` 类定义指明其构造函数需要 `residents` 参数，因此，您会在 `SquareCabin` 类定义中看到传递给 `Dwelling` 构造函数的 `residents`。在之后的 Codelab 中，您将详细了解构造函数。
+
+此时运行代码将会报错, 因为我们并未对抽象类的 `abstract` 变量提供值.
+
+在 `Dwelling` 中定义的 `abstract` 变量, 子类中必须提供值. 使用 `override` 关键字表示属性在父类中定义的, 并且此类中将被替换
+
+```kotlin
+abstract class Dwelling(private var residents: Int) {
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+
+    fun hasRoom(): Boolean {
+       return residents < capacity
+   }
+}
+
+class SquareCabin(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+}
+```
+
+我们来创建实例, 因为 `SquareCabin` 为子类, 父级的函数将继承而来. 可使用父类中定义的方法.
+
+```kotlin
+fun main() {
+    val mySquareCabin = SquareCabin(6)
+
+    println("容量:${mySquareCabin.capacity}, 材质:${mySquareCabin.buildingMaterial}, 可否新增住户: ${mySquareCabin.hasRoom()}")
+}
+
+abstract class Dwelling(private var residents: Int) {
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+
+    fun hasRoom(): Boolean {
+       return residents < capacity
+   }
+}
+
+class SquareCabin(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+}
+```
+
+我们可以使用 `with` 简化代码. 避免重复输入
+
+当使用某个类的特定实例, 并访问多个属性和函数时, 可使用 `with` 表明"对此实例执行以下操作"
+
+```kotlin
+with (mySquareCabin) {
+    println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+}
+```
+
+### 创建 RoundHut (茅草屋) 子类
+
+```kotlin
+fun main() {
+    val mySquareCabin = SquareCabin(6)
+    val roundHut = RoundHut(4)
+    with (mySquareCabin) {
+        println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+    }
+    with(roundHut) {
+        println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+    }
+}
+
+abstract class Dwelling(private var residents: Int) {
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+
+    fun hasRoom(): Boolean {
+       return residents < capacity
+   }
+}
+class SquareCabin(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+}
+class RoundHut(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Starw"
+    override val capacity = 4
+}
+```
+
+#### 创建 RoundTower 子类
+
+同样是圆形, 此可作为 `RoundHut` 的子级
+
+```kotlin
+class RoundTower(residents: Int) : RoundHut(residents) {
+    override val buildingMaterial = "Stone"
+    override val capacity = 4
+}
+```
+
+如果添加代码直接运行将会报错, 因为在 `Kotlin` 中, 类是最终层级, 无法继续子类. 只能从 `abstract` 类或者标记 `open` 关键字的类继承. 因此我们标记 `RoundHub` 类
+
+```kotlin
+open class RoundHut(residents: Int) : Dwelling(residents) {
+   // ...
+}
+```
+
+```kotlin
+fun main() {
+    val mySquareCabin = SquareCabin(6)
+    val roundHut = RoundHut(2)
+    val roundTower = RoundTower(4)
+    with (mySquareCabin) {
+        println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+    }
+    with(roundHut) {
+        println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+    }
+    with(roundTower) {
+        println("容量:${capacity}, 材质:${buildingMaterial}, 可否新增住户: ${hasRoom()}")
+    }
+}
+
+abstract class Dwelling(private var residents: Int) {
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+
+    fun hasRoom(): Boolean {
+       return residents < capacity
+   }
+}
+class SquareCabin(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+}
+class RoundHut(residents: Int) : Dwelling(residents) {
+    override val buildingMaterial = "Starw"
+    override val capacity = 4
+}
+class RoundTower(
+    residents: Int,
+    val floors: Int = 3) : RoundHut(residents) {
+    // ...
+    override val buildingMaterial = "Stone"
+    override val capacity = 4 * floors
+}
+```
+
+我们继续为 `RoundTower` 添加多个楼层. 如果有多个参数, 一行无法完全显示, 可划分为多行代码. 同时我们也为接收参数可添加默认值
+
+```kotlin
+class RoundTower(
+    residents: Int,
+    val floors: Int = 3) : RoundHut(residents) {
+    // ...
+    override val buildingMaterial = "Stone"
+    override val capacity = 4 * floors
+}
+```
