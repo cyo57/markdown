@@ -10,6 +10,8 @@ $$
 
 ### 当 $\lim_{x\rightarrow0}$ 时, 常用等价无穷小
 
+>  等价无穷小只能用于相乘/除, 加减时不能使用
+
 $\sin x \rightarrow x$
 
 $\tan x \rightarrow x$
@@ -27,6 +29,8 @@ $(1+x)^\alpha-1 \rightarrow \alpha x$
 $1 - \cos x \rightarrow \frac{1}{2}x^2$
 
 $a^x-1 \rightarrow x \ln \alpha$
+
+
 
 ### 两个重要极限
 
@@ -47,5 +51,7 @@ $$
 - $(1+\frac{2}{x})^x = ((1+\frac{1}{\frac{x}{2}})^{\frac{x}{2}})^{2}$
 
 $$
-\lim_{x\rightarrow\infty}(1+\frac{1}{x})^{\frac{1}{x}}=e
+\lim_{x\rightarrow\infty}(1+\frac{1}{x})^{\frac{1}{x}}=e 
 $$
+
+  
