@@ -2,9 +2,15 @@
 
 ## 三角函数
 
+$\sin(\frac{\pi}{2}-t)=\cos t$
+
 $$
 \sin^2\frac{a}{b} = \sin(\frac{a}{b})^2
 $$
+
+## 位置
+
+$e^{\ln a} = a$
 
 ## 极限
 
@@ -30,8 +36,6 @@ $1 - \cos x \rightarrow \frac{1}{2}x^2$
 
 $a^x-1 \rightarrow x \ln \alpha$
 
-
-
 ### 两个重要极限
 
 1
@@ -53,5 +57,3 @@ $$
 $$
 \lim_{x\rightarrow\infty}(1+\frac{1}{x})^{\frac{1}{x}}=e 
 $$
-
-  
