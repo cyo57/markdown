@@ -35,9 +35,28 @@ had + 过去分词
 在过去某个动作前发生的动作或事
 
 > Tommy had already swallowed them. 
+> 
+> After they had entered the house, they went into the dining room.
+> 前半句为过去完成时, 因为进入房子比进入餐厅更早
 
 
 
+### 119
 
+#### 短语
+
+happened to... 发生...
+
+as ... as ...
+
+- as quickly as they could
+
+- as soon as possible
+
+go back to... 回去...
+
+- go back to work
+
+- go back to one's hometown
 
 
