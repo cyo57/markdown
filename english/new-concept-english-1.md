@@ -108,3 +108,43 @@ This is a photograph **I took during my trip tp Australia**
 - photograph 在定语从句中是 took 的宾语，省略了关系代词
 
 #### 短语
+
+### 125
+
+#### 基本句型
+
+She has to leave early
+She **must** leave early
+
+Does she have to leave early?
+**Must** she leave early?
+
+She doesn't need to leave early
+She **needn't** leave early
+
+must 多用于强调主观看法，后面加动词原形，主要指现在、将来，且不随人称、时态的变化而变化
+
+#### 短语
+
+have to... 必须做...
+don't need to... 不必要做...，have to的否定
+
+have... had to... 指have to的完成形式
+
+instead of... +动词或名词，表达替代的东西
+
+### 127
+
+#### 基本句型
+
+I think... 我想；我认为
+I don't think... 
+
+Doesn't zeze **look** old. 系动词look，指“看起来”
+
+> look + adj.
+
+#### 短语
+
+must be... 根据事实的推论，表示一定
+can't be... 是must be的否定式，表示不可能
