@@ -148,3 +148,32 @@ Doesn't zeze **look** old. 系动词look，指“看起来”
 
 must be... 根据事实的推论，表示一定
 can't be... 是must be的否定式，表示不可能
+
+### 129
+
+#### 基本句型
+
+must have been...
+那时一定是，表示过去正进行的事情的推测
+
+- You must have been driving at seventy miles an hour.
+
+- You must have been playing in the garden.
+
+can't have been...
+那时不可能是，表示过去正进行的事情的推测
+
+- I can't have been so fast.
+
+- They can't have been doing their homework.
+
+do you think...
+特殊疑问句中的插入句，用来征求见解或表达看法
+
+- What do you think you are?
+
+
+
+
+
+#### 短语
