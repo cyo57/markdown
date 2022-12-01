@@ -2,12 +2,6 @@
 
 New Concept English
 
-## A1
-
-## A2
-
-## A3
-
 ## Lessons
 
 ### 117
@@ -171,9 +165,5 @@ do you think...
 特殊疑问句中的插入句，用来征求见解或表达看法
 
 - What do you think you are?
-
-
-
-
 
 #### 短语
