@@ -27,3 +27,19 @@ s = input()
 print(s[::-1])
 ```
 
+## eval()
+
+eval() 函数用来执行一个字符串表达式，并返回表达式的值。
+
+```python
+eval(expression[, globals[, locals]])
+
+
+>>>x = 7
+>>> eval( '3 * x' )
+21
+>>> eval('pow(2,2)')
+4
+
+```
+
