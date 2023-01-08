@@ -11,7 +11,7 @@ Kotlin 语法接近于 js, 例如
 ```kotlin
 fun main(args){
     println("Hello, World!")
-    //print()同样是输出文本, 但不会换行
+    // print()同样是输出文本, 但不会换行
 }
 ```
 
@@ -328,14 +328,19 @@ when (rollResult) {
 ## 类和继承
 
 > - 类层次结构
-> 
+>   一种将类按父级和子级层次结构进行整理的排列方式
+>
 > - 子级或子类
-> 
+>   层次结构中位于其他类下方的任意类。
+>
 > - 父级, 父类, 基类
-> 
+>   具有一个或多个子类的任意类。
+>
 > - 根类或顶级类
-> 
+>   位于类层次结构顶部（或根部）的类。
+>
 > - 继承
+>   子类包含（或继承）其父类的所有属性和方法的情况。
 
 ### 继承
 
@@ -345,16 +350,19 @@ when (rollResult) {
 
 包含其所有子类通用的属性和函数. 如果属性的值及函数的实现情况未知, 则可以将其作为抽象类.
 
+抽象类的声明以 `abstract` 关键字开头。
+
 ```kotlin
 abstract class Dwelling(){
     abstract val buildingMaterial: String
     abstract val capacity: Int
 }
+// `abstract` 关键字则表示此处不会定义
 ```
 
 我们添加建筑材料, 人数 属性
 
-`abstract` 关键字则表示此处不会定义
+##### 有关住客人数的私有属性
 
 所有房子都有一定的人数, 直接在父类中定义属性, 以便所有子类使用. 
 添加住客人数的私有属性, 并设置为私有. (此处设置为 `var` , 因为人数可能会变化)
@@ -383,9 +391,16 @@ abstract class Dwelling(private var residents: Int){
 
 ### 创建子类
 
-在父类下, 创建一个 `SquareCabin` 的类. 并指明此类与基类相关, 表明拓展自 `Dwelling` 类. 因为 `SquareCabin` 将提供抽象部分的实现
+1. 在父类下, 创建一个 `SquareCabin` 的类. 并指明此类与基类相关, 表明拓展自 `Dwelling` 类. 因为 `SquareCabin` 将提供抽象部分的实现
+2. 如果是从父类拓展, 必须传入父类所需的参数, 例如
 
-注意传入父类需要的参数, 此处我们使用灵活的实现. 不要将 `residents` 声明为 `val,`, 因为在重复使用父类 `Dwelling` 中声明的属性
+```Kotlin
+class SquareCabin: Dwelling(10)
+```
+
+
+
+1. 注意传入父类需要的参数, 此处我们使用灵活的实现. 不要将 `residents` 声明为 `val,`, 因为在重复使用父类 `Dwelling` 中声明的属性
 
 ```kotlin
 class SquareCabin(residents: Int) : Dwelling(residents)

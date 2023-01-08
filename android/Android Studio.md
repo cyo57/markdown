@@ -1,5 +1,9 @@
 # Android Studio
 
+# Unit1
+
+Kotlin basics
+
 阅读前建议学习CSS
 
 ## Hello World
@@ -404,3 +408,12 @@ val imageRes = when (resultDice) {
 学习使用 `setImageResource()` 更改 `ImageView`
 
 使用 `if else` 和 `when`
+
+# Unit2
+
+Layouts
+
+## 获取用户输入
+
+增进布局方面的知识, 并开发一款小费计算器, 且加入四舍五入. 在 Kotlin 中熟悉基础操作, 然后转换到 Android Studio 中开发软件
+
