@@ -15,10 +15,10 @@
 - Github Desktop 可设置代理, 打开 `.gitconfig`
 
 ```yaml
-[http]
+[http "https://github.com"]
 	proxy = socks5://127.0.0.1:7
-[https]
+[https "https://github.com"]
 	proxy = socks5://127.0.0.1:7
-[git]
+[git "https://github.com"]
 	proxy = socks5://127.0.0.1:7
 ```
