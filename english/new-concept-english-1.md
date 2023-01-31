@@ -1,8 +1,268 @@
-# 新概念英语
+# 新概念英语1
 
-New Concept English
+New Concept English S1
+
+> H3 单元标题
+> 
+> H4 知识点
 
 ## Lessons
+
+### 7-13 特殊疑问句
+
+特殊疑问句 = 特殊疑问词 + 一般疑问句 (去掉答案)
+
+- where
+
+- what
+
+- how
+
+- whose
+
+- What color (colour)
+
+- How many
+
+> She is from Italy.
+> Is she from Italy?
+> Whese is she from?
+> 
+> Ask me if Helen is well today.
+> Is Helen well today?
+> How is Helen today?
+> 
+> This is his keyboard.
+> Is this his keyboard?
+> Whose keyboard is this?
+> 
+> Her new dress is green.
+> IS her new dress green?
+> What color is her new dress?
+> 
+> How many
+
+### 15 复数
+
+#### 名词复数
+
+直接+s
+
+| 单数     | 复数      |
+| ------ | ------- |
+| friend | friends |
+| pen    | pens    |
+
+以s, o, xx, ch, sh 结尾的单词 +es
+
+| 单数     | 复数       |
+| ------ | -------- |
+| dress  | dresses  |
+| watch  | watches  |
+| tomato | tomatoes |
+| dish   | dishes   |
+| box    | boxes    |
+
+以f, fe 结尾, 变成v 再 +es
+
+| 单数    | 复数      |
+| ----- | ------- |
+| knife | knives  |
+| thief | thieves |
+
+以元音字母+y 结尾, 直接 +s
+
+| 单数  | 复数   |
+| --- | ---- |
+| day | days |
+| boy | boys |
+
+以辅音字母+y 结尾, 把y 变成i 再 +es
+
+| 单数      | 复数        |
+| ------- | --------- |
+| country | countries |
+| city    | cities    |
+
+### 21-23 宾格
+
+| pron. | pron. |
+| ----- | ----- |
+| we    | us    |
+| they  | them  |
+| you   | you   |
+
+### 25 There be
+
+#### 肯定句
+
+There be + a/an + sth. + 地点
+
+- There is a table in the middle of the room.
+
+#### 否定句
+
+There be + not + a/an + sth. + 地点
+
+- There isn't an electric cooker in this room.
+
+#### 一般疑问句
+
+be 提到句首
+
+- Is there an electric cooker in this room?
+
+### 27 特殊疑问句
+
+#### How many
+
+> There are **three** chairs in the living room.
+> Are there three chairs in the living room?
+> **How many chairs** are there in the living room?
+
+#### any 和 some
+
+- some 用于肯定句
+
+- any 用于否定和疑问句
+
+### 31 时态
+
+#### 现在进行时
+
+一个动作现在正在进行
+
+变化
+
+- v. +ing
+
+- 去e +ing
+
+- 双写 +ing
+
+**肯定句**
+
+结构
+
+- 主语 + am/is/are + doing (v.ing 现在分词)
+
+**否定句**
+
+- 主语 + am/is/are + not + doing
+
+**一般疑问句**
+
+- am/is/are + 主语 + doing?
+
+**特殊疑问句**
+
+- What + am/is/are + 主 + <u>doing</u> (doing本词)
+
+#### who 特殊疑问句
+
+直接用特殊疑问词替代主语
+
+- Tim is watching the TV.
+
+- Who is watching the TV?
+
+### 35 prep.
+
+between 在...之间
+
+into 进
+
+- What is his wife doing?
+  She is walking into a shop
+
+out of 出
+
+- What are the children doing?
+
+- The children are running out of shcool
+
+along 沿着
+
+- They are walking along the river
+
+across 穿过
+
+- They are swimming across the river
+
+beside 紧挨着
+
+- The left man is sitting beside the woman
+
+near 周围
+
+- The right man is sitting near the woman
+
+under 在...下方
+
+- The ship is going under the bridge
+
+over 跨越
+
+- They are flying over the bridge
+
+on 上方
+
+- She is sitting on the chair
+
+in 里面
+
+- They are sitting in the room
+
+off 从上面离开
+
+- They are jumoing off the wall
+
+onto 从下面上去
+
+- He is jumping onto his car
+
+### 37 时态
+
+#### 一般将来时
+
+going to ... 将要
+
+**肯定句**
+
+- 主 + am/is/are + going to do (v.原型)
+
+- gonna do (口语)
+
+**否定句**
+
+- 主 + am/is/are + not +going to do (v.原型)
+
+**一般疑问句**
+
+- am/is/are (提句首) + 主
+
+**特殊疑问句**
+
+- What am/is/are + 主 + going to do?
+
+### 39 give sb. sth.
+
+- in front of the car
+  在车外部的前面
+
+- in the front of the car
+  在车内部的前面
+
+**do with sth.**
+
+处理...
+
+- what are you going to do with that old car?
+  I'm going to give Leo the car
+
+- 
+
+
 
 ### 117
 
