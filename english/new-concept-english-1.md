@@ -94,19 +94,19 @@ New Concept English S1
 
 ### 25 There be
 
-#### 肯定句
+**肯定句**
 
 There be + a/an + sth. + 地点
 
 - There is a table in the middle of the room.
 
-#### 否定句
+**否定句**
 
 There be + not + a/an + sth. + 地点
 
 - There isn't an electric cooker in this room.
-
-#### 一般疑问句
+  
+  **一般疑问句**
 
 be 提到句首
 
@@ -126,9 +126,15 @@ be 提到句首
 
 - any 用于否定和疑问句
 
+**例外** 比如希望得到肯定回答
+
+- Do you want some juice?
+
+- How about some milk?
+
 ### 31 时态
 
-#### 现在进行时
+#### 现在进行时 ing
 
 一个动作现在正在进行
 
@@ -223,7 +229,7 @@ onto 从下面上去
 
 ### 37 时态
 
-#### 一般将来时
+#### 一般将来时 going to
 
 going to ... 将要
 
@@ -231,7 +237,7 @@ going to ... 将要
 
 - 主 + am/is/are + going to do (v.原型)
 
-- gonna do (口语)
+- gonna do (口语) = going to
 
 **否定句**
 
@@ -255,14 +261,303 @@ going to ... 将要
 
 **do with sth.**
 
-处理...
+处理 sth.
 
 - what are you going to do with that old car?
   I'm going to give Leo the car
 
-- 
+**give sb. sth.**
 
+- give me the vase
 
+**give sth. to sb.**
+
+- give the vase to me
+
+### 41 名词n.的可数不可数
+
+可数名词 cn.
+
+不可数名词 un.
+
+- There **is** some bread.
+  
+  > 此处is/are看名词不看some
+
+#### 如何判断可数与否
+
+- 液体milk / 气体air
+
+- 组成过小 sand/grass/hair
+
+- 总称 food/fruit
+
+- 同一单词含义不同
+
+- 字典
+
+### 43 情态动词 can
+
+**肯定句**
+
+- 主 + can + do (v.)
+
+**否定句**
+
+- 主 + can + not + do (v.原)
+
+**一般疑问句**
+
+- Can + 主 + do (v.原)
+
+**特殊疑问句**
+
+- What + can + 主 + do (v.原)
+
+### 47 时态 do
+
+#### 一般现在时
+
+> do, does
+> 
+> He wants this job
+> He does want this job
+> 
+> 主语为第三人称单数时 需要v. +s，但有does不需要
+
+#### v.第三人称单数变化
+
+- v. +s
+
+- s, x, ch, sh, o 结尾 +es
+
+- 辅音字母+y结尾, 把y变i 再+es
+
+- 元音字母+y结尾, 直接+s
+
+并非表示现在, 过去现在将来都有关系
+
+**肯定句**
+
+- I want this job.
+
+- I like tea.
+
+- I **do** like tea.
+
+- He **wants** this job, too
+
+- He **does** like want this job
+  
+  > 此处do/does为助动词，语气上的强调
+  > 
+  > 一般现在时 否定句
+  > do/does + not
+
+**否定句**
+
+- I don't want this job
+- He doesn't want this job.
+
+**一般疑问句**
+
+- Do you want this job?
+- Dose he want this job?
+
+**特殊疑问句**
+
+- What do you want? 
+
+### 63-66 情态动词 must
+
+#### must
+
+**肯定句**
+
+主 + must + do
+
+- I have a very bad headache
+
+**否定句**
+
+主 + must + not + do
+
+- You musn't go
+  
+  > must not 表示 **禁止** , 不代表 **不必**, 轻易不使用mustn't, 多用don't
+  > 
+  > must not 比 don not语气更强烈
+
+**一般疑问句**
+
+Muse + 主 + do ...?
+
+- Must I do the housework today?
+
+**特殊疑问句**
+
+What + must + 主 + do
+
+- What must she do?
+
+#### when 特殊疑问句
+
+- When must you com home?
+  I must come home at one o'clock
+
+### 67 否定疑问句/时态
+
+#### 一般过去时 was/were
+
+| 原型    | 过去式  |
+| ----- | ---- |
+| am/is | was  |
+| are   | were |
+
+**肯定句**
+
+- He was ill
+
+- He was at work in the morning.
+
+**否定句**
+
+- They were not at school
+
+**一般疑问句**
+
+- Was he ill?
+
+- Was he at work in the morning?
+
+**特殊疑问句**
+
+- When was he at work?
+
+**否定疑问句**
+
+- Isn't he Leo?
+  难道他不是Leo吗
+
+- Can't you see me?
+  难道你看不见我吗
+
+- Isn't he sleeping?
+  难道他没睡觉吗
+
+### 69 there be
+
+There is/are + sth. + sw. (somewhere)
+
+There was/were + sth. +sw.
+
+- Where is the pen?
+  There was a pen on the table. It's not here.
+
+### 71 时态
+
+#### 一般过去时 did
+
+do/does -> did
+
+#### v. 过去式变化
+
+- +ed
+
+- 结尾e不发音 +d
+
+- 双写 +ed (不靠谱)
+
+**肯定句**
+
+- Do you love?
+  I love you.
+  I loved you.
+
+**否定句**
+
+- I talked to him yesterday
+
+- I didn'nt not empty the basket yesterday
+
+**一般疑问句**
+
+> do/does 提句首， v.变原型
+
+- Did you love me?
+
+- Did you play with your parents yesterday?
+
+**特殊疑问句**
+
+What + did + 主 + do?
+
+- What did you do yesterday afternoon?
+  He called me.
+
+- What did she do last night?
+  She watched TV last night.
+
+### 79 have got
+
+#### Have got
+
+have got ... 拥有
+
+**肯定句**
+
+- I have a car
+
+- I have got a car
+
+**肯定句三单**
+
+- He has a car
+
+- He has got a car
+
+**否定句**
+
+- I don't have a car
+
+- I havn't got a car
+
+**否定句三单**
+
+- He doesn't have a car
+
+- He hasn't got a car
+
+**疑问句**
+
+- Do you have a car
+
+- Has he got a car
+
+**疑问句三单**
+
+Have/Has + 主 + got + ...
+
+- Does he have a car
+
+- Has he got a car?
+
+#### much/many
+
+> many修饰可数
+> much修饰不可数
+
+much + un. (否/疑)
+
+- There isn't much tea on the table
+
+- How much money do you want
+
+many + cn.
+
+- There aren't many dishes in the kitchen
+
+- How many photos did you take
 
 ### 117
 
