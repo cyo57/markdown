@@ -241,7 +241,7 @@ going to ... 将要
 
 **否定句**
 
-- 主 + am/is/are + not +going to do (v.原型)
+- 主 + am/is/are + not + going to do (v.原型)
 
 **一般疑问句**
 
