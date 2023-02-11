@@ -164,7 +164,7 @@ be 提到句首
 
 - What + am/is/are + 主 + <u>doing</u> (doing本词)
 
-#### who 特殊疑问句
+#### 特殊疑问句 who
 
 直接用特殊疑问词替代主语
 
@@ -400,7 +400,7 @@ What + must + 主 + do
 
 - What must she do?
 
-#### when 特殊疑问句
+#### 特殊疑问句 when
 
 - When must you com home?
   I must come home at one o'clock
@@ -558,6 +558,186 @@ many + cn.
 - There aren't many dishes in the kitchen
 
 - How many photos did you take
+
+### 83 时态
+
+#### 现在完成时 have done
+
+主 + have down (过去分词) + other
+
+> 过去分词：规则变化ed / 不规则变化
+
+**肯定句**
+
+主 + have done + other
+
+- I have had lunch
+
+**否定句**
+
+主 + have/has + not + done (过去分词) + other
+
+- I have not had lunch
+
+**一般疑问句**
+
+Have/Has + 主 + done + other ?
+
+- Has you had lunch?
+
+#### Have/has/having/had/had
+
+| 单词     | 形式   |
+| ------ | ---- |
+| have   | 原型   |
+| has    | 三单   |
+| having | 现在分词 |
+| had    | 过去式  |
+| had    | 过去分词 |
+
+**用法1 言之过去，意在当下**
+
+- Do you want to have some food?
+  No, thanks. I have just had some food
+
+- Have a cigarette?
+  No, thanks. I have just had one.
+
+### 85 Have been to.../Have gone to
+
+**Have/Has gone to**
+
+意为 ”某人去了某地,现在还没有回来,可能在去的途中或已经到了目的地”
+
+- He has gone to Shanghai.
+  现在不在这，可能在上海的路上，或者已经在上海
+
+**Have/Has been to**
+
+”某人曾经去过某地,此时已回来”, 常与twice, several times, ever, never teacheray.com等词连用
+
+- He has been to Chine three times.
+  他去过中国三次
+
+
+
+### 89 时态
+
+#### 现在完成时 have done
+
+for + 一段时间
+
+since + 时间点
+
+**用法**
+
+一个动作done或者状态been从过去持续或重复到现在
+
+- How long have you lived in Beijing?
+
+- I  have lived in Beijing for 10 years.
+
+- I have lived in Beijing since 2012
+
+
+
+### 91 时态
+
+#### 一般将来时 will
+
+**用法1 意愿，临时决定** (S1L91)
+
+- I'll miss him.
+
+- When will the new people move into this house?
+
+#### will do
+
+**肯定**
+
+- It's heavy. I'll help you
+
+**否定**
+
+- will not = won't
+
+**一般疑问**
+
+- will 句首
+
+- Will you miss me?
+
+#### 难点
+
+will 和 be going to do
+
+will **不是**预先考虑的决定
+
+
+
+### 95 had better
+
+最好 (去做sth. 否则有麻烦)
+
+**You'd better 不表示过去**
+
+主语 + had better + v.原 + other
+
+- You'd better sleep
+
+- You'd better return the money
+
+主语 + had better + not + v.原 + other
+
+- You'd better not do that
+
+- You'd better not follow me
+
+
+
+### <!> 99 宾语从句
+
+> 定义：一个句子充当宾语 这个句子叫宾语从句
+
+主 + v. + (that) + 句子
+
+- I hope that you've got some money. (S1L79)
+
+- I believe that this house is for sale. (S1L89)
+
+
+
+### <!> 101 直接引语 - 间接引语
+
+> The doctor says, "I will com at once."
+> The docker says that he will come at once.
+> 
+> 1. 去引号
+> 
+> 2. 转换人称
+> 
+> 3. 添加引导词that
+
+- He says "I can do it."
+  He says that he can do it
+
+- "I have just arrived in China". says Leo.
+  Leo says that he have just arrived in China.
+
+- He says, "I feel tired."
+  He says that he **feels** tired.
+
+#### 反义疑问句
+
+> 前肯后否，前否后肯
+> 
+> 前后人称时态保持一致
+
+- He doesn't say very much, does he?
+
+- Leo is in Tokyo, isn't he?
+
+
 
 ### 117
 
