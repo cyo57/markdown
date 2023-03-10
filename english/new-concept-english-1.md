@@ -619,8 +619,6 @@ Have/Has + 主 + done + other ?
 - He has been to Chine three times.
   他去过中国三次
 
-
-
 ### 89 时态
 
 #### 现在完成时 have done
@@ -638,8 +636,6 @@ since + 时间点
 - I  have lived in Beijing for 10 years.
 
 - I have lived in Beijing since 2012
-
-
 
 ### 91 时态
 
@@ -673,8 +669,6 @@ will 和 be going to do
 
 will **不是**预先考虑的决定
 
-
-
 ### 95 had better
 
 最好 (去做sth. 否则有麻烦)
@@ -693,8 +687,6 @@ will **不是**预先考虑的决定
 
 - You'd better not follow me
 
-
-
 ### <!> 99 宾语从句
 
 > 定义：一个句子充当宾语 这个句子叫宾语从句
@@ -704,8 +696,6 @@ will **不是**预先考虑的决定
 - I hope that you've got some money. (S1L79)
 
 - I believe that this house is for sale. (S1L89)
-
-
 
 ### <!> 101 直接引语 - 间接引语
 
@@ -736,8 +726,6 @@ will **不是**预先考虑的决定
 - He doesn't say very much, does he?
 
 - Leo is in Tokyo, isn't he?
-
-
 
 ### 117
 
