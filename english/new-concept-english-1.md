@@ -690,6 +690,8 @@ will **不是**预先考虑的决定
 ### <!> 99 宾语从句
 
 > 定义：一个句子充当宾语 这个句子叫宾语从句
+> 
+> 分别用 think/bilieve/hope/say/understand/know 造句
 
 主 + v. + (that) + 句子
 
