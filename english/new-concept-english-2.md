@@ -59,11 +59,27 @@ New Concept English S1
 
 ### 1
 
+> Question
+> 
 > 1. 如何自己用单词造句
 > 
 > 2. 如何表达 “这个座位有人吗”
+>    
+>    - Is the seat taken?
 > 
 > 3. 如何表达 "不要无理"
+>    
+>    - Don't be rude.
+> 
+> Homework
+> 
+> 1. 单词造句 
+>    
+>    - 单词造句指南
+>    
+>    - 每个单词5句
+> 
+> 2- 听电影片段，直到听出句子
 
 #### 单词造句指南
 
@@ -78,4 +94,12 @@ New Concept English S1
 
 - 其他单词+词性
 
-- 原文摘抄
+- 原文摘抄+变
+
+#### 短语
+
+have a conversation
+
+take a seat
+
+pay attention
