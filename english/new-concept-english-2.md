@@ -57,7 +57,7 @@ New Concept English S1
 >    
 >    - 课下 有意识 --> 下意识
 
-### 1
+### 1 单词
 
 > Question
 > 
@@ -103,3 +103,51 @@ have a conversation
 take a seat
 
 pay attention
+
+### 1 语法
+
+> Question
+> 
+> 1. 如何造一个英文句子
+>    
+>    - 主语、动词、时态
+> 
+> 2. 如何造一个好英文句子
+> 
+> 3. 英文的语序
+
+#### 造句
+
+**造句1**
+
+天黑了
+
+- night 没有主语
+
+- It is night.
+
+他们累了
+
+- They tired 没有动词
+
+- They are tired
+
+他们在等
+
+- They wait for Godot 没有v.变化 (时态)
+
+- They are waiting for Godot.
+
+**造句2**
+
+A woman is shouting. (+adj. +adv.)
+
+- An **ugly** woman is **shouting** angrily.
+
+- A **cute** woman is shouting **happily**.
+
+A woman is shouting. (+地点)
+
+- An ugly woman is shouting angrily **in her car**.
+
+- An cute woman is shouting happily **on the beach**.
