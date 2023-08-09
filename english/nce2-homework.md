@@ -75,7 +75,9 @@ angry adj.
 
 angrily
 
-- attention n.注意
+- 
+
+attention n.注意
 
 > pay attention 专心
 
