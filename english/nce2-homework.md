@@ -75,9 +75,7 @@ angry adj.
 
 angrily
 
-- 
-
-attention n.注意
+- attention n.注意
 
 > pay attention 专心
 
@@ -94,3 +92,21 @@ attention n.注意
 business
 
 rudely
+
+#### 习惯用法造句
+
+go to the teatre
+
+have a good seat
+
+get angry
+
+turn round
+
+pay attention
+
+in the end
+
+couldn't bear it
+
+it's none of your business
