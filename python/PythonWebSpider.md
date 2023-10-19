@@ -4,23 +4,24 @@ The Website is the API
 
 作为网站获取数据, 我们只需要把网站当做API即可
 
-
 ## Instruction
+
 ### 库
 
 通过一下第三方库则可以完成普通怕成
 
 - Requests
   发起网络请求
-
+  
   - robots.txt
     爬虫排除标准
     盗亦有道
   - 实战
-  
-- Beautiful Souq
 
+- Beautiful Souq
+  
   解析HTML
+  
   - re
     正则表达式
 
@@ -41,23 +42,29 @@ The Website is the API
 #### 集成工具类
 
 - Wing
+  
   - 买断制, 公司维护
   - 调试功能丰富, 版本控制/ 同步
   - 适用于多人开发
+
 - Visual Studio
+  
   - MicroSoft 维护
   - 适用于Windows
+
 - Eclipse
+  
   - 需要PyDev支持
   - 开源
 
 - PyCharm
+  
   - 适用于大型项目
+
 - Anacond
+  
   - 开源, 
   - 适用于 科学计算/数据分析
-
-
 
 ## 信息提取
 
@@ -108,7 +115,7 @@ Response提供的方法, 可判断`status_code`是否为200
 
 ```Python
 def getHTMLText(url):
-	try:
+    try:
     r=requests.get(url, timeout=30)
     r.raise_for_status() #如果状态不是200则引发HTTPError异常
     return r.text
@@ -121,14 +128,14 @@ def getHTMLText(url):
 为了更好地理解方法, 我们应当理解**HTTP协议**
 
 | .request() | 构造请求, 以支撑以下方法 |
-| ---------- | ---- |
-| .get()     |获取URL位置资源 |
-| .head()    |获取头部信息|
-| .post()    |请求后附加用户新数据|
-|.put()|向URL存储资源覆盖原位置|
-|.patch()|提交局部修改请求|
-|.delete()|提交删除请求|
-|options|不常用|
+| ---------- | ------------- |
+| .get()     | 获取URL位置资源     |
+| .head()    | 获取头部信息        |
+| .post()    | 请求后附加用户新数据    |
+| .put()     | 向URL存储资源覆盖原位置 |
+| .patch()   | 提交局部修改请求      |
+| .delete()  | 提交删除请求        |
+| options    | 不常用           |
 
 PATCH提交部分, PUT提交全部, 有节省带宽的优势
 
@@ -137,8 +144,6 @@ PATCH提交部分, PUT提交全部, 有节省带宽的优势
 超文本传输协议, 基于"请求与响应"模式, 无状态的应用层协议 (基于TCP)
 
 采用URL作为定位网络资源的标识
-
-
 
 #### .head()
 
@@ -154,10 +159,10 @@ r = requests.post(url, data = p)
 print(r.text)
 '''
 {
-	'form': {
-		'名字': '张大哥',
-		'年龄': '666'
-	},
+    'form': {
+        '名字': '张大哥',
+        '年龄': '666'
+    },
 }
 '''
 ```
@@ -178,13 +183,13 @@ print(r.text)
 **kwargs(可选)**
 
 - params
-
+  
   字典或字节序列, 作为参数增加到url
   `http://a.com/ws?key1=value1&key2=value2`
 
 - data
   字典, 字节序列或文件对象, 作为Requests内容
-
+  
   ```python
   data = {'k1':'v1', 'k2':'v2'}
   r = requests.request('POST', url, data=data)
@@ -192,7 +197,7 @@ print(r.text)
 
 - json
   作为Requests内容
-
+  
   ```python
   json = {'k1':'v1'}
   r = requests.request('POST', url, json=json)
@@ -200,7 +205,7 @@ print(r.text)
 
 - headers
   字典, HTTP头
-
+  
   ```python
   hd = {'user-agent':'Chrome/10'}
   r = requests.request('POST', url, headers=hd)
@@ -210,16 +215,17 @@ print(r.text)
 
 - timeout
   超时时间, 单位(s), 异常抛出timeout
-
+  
   ```python
   r = requests.request('GET', url, timeout=10)
   ```
 
 - proxies
-
+  
   字典类型, 代理访问服务器, 增加登录类型
 
 - 开关字段 (True/False)
+  
   - allow_redirects -> 重定向
   - stream -> 获取内容立即下载
   - verify -> SSL开关
@@ -228,8 +234,6 @@ print(r.text)
 #### POST
 
 .post(url, data-None, json=None, **kwargs)
-
-
 
 #### GET
 
@@ -244,8 +248,6 @@ try:
 except:
   return '异常'
 ```
-
-
 
 ## 盗亦有道
 
@@ -270,8 +272,6 @@ except:
 #### Robots协议的使用
 
 类人行为可不参考Robots协议, 不对服务器造成负担. 但**不能用于商业用途**
-
-
 
 ## Requests 实战
 
@@ -339,15 +339,7 @@ except:
 
 本次作业使用 [ip138.com](http://ip138.com), API为 `https://site.ip138.com/{{ip}}`
 
-
-
 以爬虫的视角看待, 万物皆可爬
-
-
-
-
-
-
 
 ## BeautifulSoup
 
@@ -385,8 +377,6 @@ bs4可以解析所有标签文本. 共有4种解析器
 
 `.<tag>.parent`, 父级; 
 
-
-
 ### 标签树遍历
 
 #### 下行遍历
@@ -415,15 +405,11 @@ bs4可以解析所有标签文本. 共有4种解析器
 
 **.previous_siblings**, **迭代,** 返回所有前续平行节点标签
 
-
-
 ### 基于bs4的HTML输出
 
 #### prettify()
 
 为HTML文本的标签和内容增加换行符, 也可以为标签做处理`soup.a.prettify()`
-
-
 
 ### 信息标记
 
@@ -438,11 +424,12 @@ bs4可以解析所有标签文本. 共有4种解析器
 
 - XML, eXtensible Markup Language
   `<img src='1.jpg' size=10>哈哈哈</img>`
+  
   - 有效信息不高, 大多数被标签占用
 
 - JSON, JavaScript Object Notation
   键值对 且有数据类型, key: value
-
+  
   ```json
   "name": {
       "newName": "1",
@@ -453,12 +440,12 @@ bs4可以解析所有标签文本. 共有4种解析器
   
   "name":"1"
   ```
-
+  
   - 需要双引号标识类型
 
 - YAML, YAML Ain't Markup Language
   键值对 无数据类型, key: value
-
+  
   ```yaml
   name:
       newName: 哈
@@ -472,7 +459,7 @@ bs4可以解析所有标签文本. 共有4种解析器
   你大师的撒汇顶科技爱上大数据库的哈斯
   大萨达哈时间跨度杀寇决撒囧囧阿迪
   ```
-
+  
   - 非常简洁
 
 ### 信息提取
@@ -611,8 +598,6 @@ if __name__ == '__main__':
 
 采用了 requests-bs4 库, 且对中英文混排版做出优化
 
-
-
 ## Re 正则表达式
 
 通过两周的学习, 我们学习了`Requests`, 了解了`robots.txt`, 并可以使用`Beautiful Soup`解析HTML. 完成了大学排名爬虫.
@@ -638,22 +623,22 @@ if __name__ == '__main__':
 
 操作符包括
 
-|1|2|3|
-| ---- | ---- | ---- |
-| .    | 任何字符 | |
-| []   | 字符集(单个)   |[abc], [a-z]的单个字符|
-| [^]  | 非字符集(单个)   |[abc]|
-|*|前一字符的0或多次扩展|abc* 表 abc, abcc|
-|+|前一字符的1或多次扩展||
-|?|前一字符的0或1次扩展|abc? 表 ab, abc|
-|\||或, 左右任意一个|ab\|bc 表 ab, bc|
-|{m}|拓展前一字符m次|ab{3} 表 abbb|
-|{m,n}|拓展前一字符m到n次||
-|^|匹配开头||
-|$|匹配结尾||
-|()|分组标记, 内部只能用\||(ab|cd)表ab或cd|
-|\d|数字, 即[0-9]||
-|\w|单字符, 即[A-Za-z0-9\_]||
+| 1     | 2                   | 3                 |
+| ----- | ------------------- | ----------------- |
+| .     | 任何字符                |                   |
+| []    | 字符集(单个)             | [abc], [a-z]的单个字符 |
+| [^]   | 非字符集(单个)            | [abc]             |
+| *     | 前一字符的0或多次扩展         | abc* 表 abc, abcc  |
+| +     | 前一字符的1或多次扩展         |                   |
+| ?     | 前一字符的0或1次扩展         | abc? 表 ab, abc    |
+| \|    | 或, 左右任意一个           | ab\|bc 表 ab, bc   |
+| {m}   | 拓展前一字符m次            | ab{3} 表 abbb      |
+| {m,n} | 拓展前一字符m到n次          |                   |
+| ^     | 匹配开头                |                   |
+| $     | 匹配结尾                |                   |
+| ()    | 分组标记, 内部只能用\|       | (ab               |
+| \d    | 数字, 即[0-9]          |                   |
+| \w    | 单字符, 即[A-Za-z0-9\_] |                   |
 
 标识IP地址 - `(([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5]).){3}([1-9]?\d|1\d{2}|2[0-4]\d|25[0-5])`
 
@@ -665,13 +650,13 @@ Python原生字符串类型string, 将会转义.
 
 ### Re主要方法
 
-| 函数          | 说明                                               |
-| ------------- | -------------------------------------------------- |
-| re.search()   | 返回match对象(第一个)                              |
-| re.match()    | 返回match对象(开始位置)                            |
-| re.findall()  | 返回子串 (全部)                                    |
-| re.split()    | 去除, 分割后返回列表                               |
-| re.finditer() | 返回一个匹配结果的迭代类型, 每个为match对象        |
+| 函数            | 说明                         |
+| ------------- | -------------------------- |
+| re.search()   | 返回match对象(第一个)             |
+| re.match()    | 返回match对象(开始位置)            |
+| re.findall()  | 返回子串 (全部)                  |
+| re.split()    | 去除, 分割后返回列表                |
+| re.finditer() | 返回一个匹配结果的迭代类型, 每个为match对象  |
 | re.sub()      | 字符串中替换所有匹配表达式的子串, 返回替代后的子串 |
 
 #### re.search(pattern, string, flags=0)
@@ -697,8 +682,6 @@ if match:
     print(match.group())
 ```
 
-
-
 #### re.match(pattern, string, flags=0)
 
 #### re.split(pattern, string, maxsplit=0, flags=0)
@@ -717,27 +700,27 @@ if match:
 
 ### Match对象
 
-| 属性    | 说明               |
-| ------- | ------------------ |
-| .string | 待匹配文本         |
-| .re     | 匹配时的表达式     |
+| 属性      | 说明        |
+| ------- | --------- |
+| .string | 待匹配文本     |
+| .re     | 匹配时的表达式   |
 | .pos    | 搜索文本的开始位置 |
-| .endpos | 结束位置           |
+| .endpos | 结束位置      |
 
-| 方法      | 说明                           |
-| --------- | ------------------------------ |
-| .group(0) | 获取匹配后的字符串             |
-| .start()  | 匹配字符串在原字符串的开始位置 |
-| .end()    | -                              |
-| .span()   | 返回(.start(), .end())         |
+| 方法        | 说明                   |
+| --------- | -------------------- |
+| .group(0) | 获取匹配后的字符串            |
+| .start()  | 匹配字符串在原字符串的开始位置      |
+| .end()    | -                    |
+| .span()   | 返回(.start(), .end()) |
 
 ### 贪婪/最小匹配
 
-| 操作符 | 说明                                    |
-| ------ | --------------------------------------- |
-| *?     | 前一字符0次或无限扩展, 最小匹配         |
-| +?     | 最小匹配                                |
-| ??     | 前一个字符0次或1次扩展, 最小匹配        |
+| 操作符    | 说明                       |
+| ------ | ------------------------ |
+| *?     | 前一字符0次或无限扩展, 最小匹配        |
+| +?     | 最小匹配                     |
+| ??     | 前一个字符0次或1次扩展, 最小匹配       |
 | {m,n}? | 拓展前一个字符m到n次( 包含n ), 最小匹配 |
 
 ### 小结
@@ -746,12 +729,10 @@ regex = re.compile()
 
 `re.search` 与 `regex.search()` 相等
 
-
-
 ## [实例]淘宝爬虫
 
 > 获取淘宝搜索页面的信息, 提取商品的名称和价格
->
+> 
 > 使用requests-re
 
 ## Scrapy
@@ -774,9 +755,9 @@ SPIDERS
 DOWNLOADER - ENGINE
 
 > 请求通过SPIDERS进入(REQUESTS) ENGINE, 将发送到SCHEDULER
->
+> 
 > SCHEDULER通过ENGINE进入(REQUESTS) DOWNLOADER, 通过ENGINE返回到SPIDERS
->
+> 
 > SPIDER经过(ITEMS/REQUESTS) ENGINE到达ITEM PIPELINES(ITEMS) 和SCHEDULER(REQUESTS)
 
 ### 结构

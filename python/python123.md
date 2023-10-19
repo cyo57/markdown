@@ -40,6 +40,4 @@ eval(expression[, globals[, locals]])
 21
 >>> eval('pow(2,2)')
 4
-
 ```
-

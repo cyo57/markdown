@@ -1,5 +1,3 @@
- 
-
 # py100days
 
 ## 语言基础
@@ -19,4 +17,3 @@ print(sys.version)
 > turtle绘制图形
 
 ### 02 语言元素
-
