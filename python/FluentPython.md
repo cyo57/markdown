@@ -42,8 +42,59 @@
 
 特殊方法用行话说叫做**魔法方法**，需要把一个特殊方法`__getitem__`说出来时，一般说 "dunder-getitem", "dunder" 表示"前后双下划线"，因此特殊方法也叫"双下划线方法"
 
+### Python风格的纸牌
+
+```python
+import collections  # 导入collections模块，用于创建namedtuple
+
+# 使用namedtuple创建一张扑克牌的结构，包括'rank'（点数）和'suit'（花色）
+Card = collections.namedtuple('card', ['rank', 'suit'])
+
+class FrenchDeck:
+    # 定义点数（ranks）和花色（suits）的列表
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits = 'spades diamonds clubs hearts'.split()
+
+    def __init__(self) -> None:
+        # 初始化法式扑克牌，生成一整副牌的列表
+        self._cards = [Card(rank, suit) for suit in self.suits
+                                        for rank in self.ranks]
+
+    def __len__(self):
+        # 定义__len__方法，返回牌堆中的牌数
+        return len(self._cards)
+
+    def __getitem__(self, position):
+        # 定义__getitem__方法，根据索引位置返回相应的扑克牌
+        return self._cards[position]
+
+deck = FrenchDeck()
+# 返回一摞牌多少张
+len(deck)
+```
+
+首先用`collections.namedtuple`构建了一个简单的类，表示单张纸牌。此方法构建只有属性而没有自定义方法的类对象，此示例中用于表示一落排中的每张纸牌，例如
+
+```python
+>>> my_card = Card('7', 'diamonds')
+>>> my_card
+Card(rank='7', suit='diamonds')
+```
+
+如果想随机抽取一张纸牌，需要定义一个方法吗？不需要，因为Python已经提供了从序列中随机获取一项的函数 `random.choice`
+
+```python
+choice(deck)
+```
+
+可以看到，通过特殊方法利用Python数据模型，有两个优点：
+
+- 类的用户不需要记住标准操作的方法名称（使用`.size()`还是`.length()`还是其他？）
+
+- 充分利用Python标准库，例如`random.choice`，无需重复造轮子
+
+
+
 ## 函数即对象
 
 ## 类和协议
-
-## 
