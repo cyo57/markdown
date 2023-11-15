@@ -93,7 +93,93 @@ choice(deck)
 
 - 充分利用Python标准库，例如`random.choice`，无需重复造轮子
 
+### 特殊方法使用
 
+> 特殊方法供Python解释器调用，而不是你自己。也就是说，没有`my__object.__len__()`这种写法，正确的写法是`len(my_object)`。如果`my_object`是用户定义的类的实例，Python将调用你的`__len__()`
+
+#### 模拟数值类型
+
+实现一个二维向量类
+
+```python
+>>> v1 = Vector(2, 4)
+>>> v2 = Vector(2, 1)
+>>> v1 + v2
+Vector(4, 5)
+```
+
+`+`运算符的结果是一个新的`Vector`对象，我们的API也使用 `abs` 函数计算向量的模
+
+```python
+>>> v = Vector(3, 4)
+>>> abs(v)
+5.0
+
+>>> v * 3
+Vector(9, 12)
+
+>>> abs(v * 3)
+15.0
+```
+
+**示例** (使用`__repr__`, `__abs__`, `__add__`, `__mul__` 等特殊方法实现运算)
+
+```python
+import math
+
+
+class Vector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        return f'Vector({self.x!r}, {self.y!r})'
+
+    def __abs__(self):
+        # 向量的长度或模
+        return math.hypot(self.x, self.y)
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
+
+    def __bool__(self):
+        return bool(abs(self))
+```
+
+示例中的方法创建并返回新的 `Vector` 实例，没有修改运算对象，只是读取 `self` 或 `other`，这是中缀运算符的预期行为，即创建新对象，不修改运算对象。
+
+#### 字符串表示形式
+
+`__repr__`供内置函数`repr`调用，获取对象的字符串表示形式。
+
+`__repr__`方法返回的字符串应当没有歧义，如果可能，最好和源码保持一致，方便重新创建所表示的对象。
+
+#### 自定义类型的布尔
+
+为了确定 x 表示的值为真或假，Python调用 `bool(x)`，返回 True 或 False
+
+默认情况下，`bool(x)`调用 `x.__bool__()`，以后者返回结果为准。如果没有实现 `__bool__()`，Python则调用 `x.__len__()`，如果返回0则`bool()`返回False，否则返回True
+
+### 特殊方法
+
+### len为什么不是方法
+
+> 当 x 是内置类型的实例时，`len(x)`运行速度非常快。
+> 
+> 之所以len不作为方法调用，是因为它经过了特殊处理，被当作Python数据模型的一部分，就像abs函数一样。
+> 
+> 但是借助特殊方法`__len__`·，也可以让len适用于自定义对象，这是一种相对公平的折中方案，满足了内置对象对速度的要求，又保证了语言的一致性。
+
+计算s中有多少个x，写作`s.count(x)` (s是某种序列)
+
+### 小结
+
+借助特殊方法，自定义对象的行为可以像内置类型一样，写出更具表现力的代码，符合社区认可的Python风格
+
+### 内置序列类型
 
 ## 函数即对象
 
