@@ -596,7 +596,7 @@ umask的分数指的是“**默认值**需要**减掉**的权限”。文件默�
 
 假如我们要修改`umask`值，直接运行`umask 002`即可，注意运算时是减去字符而不是减去数字。例如`666-003=663` 怎么可能多出来执行权限
 
-#### 文件隐藏属性
+#### attr 文件隐藏属性
 
 `chattr`指令只能在Ext2/Ext3/Ext4的 Linux 传统文件系统上面完整生效
 
@@ -628,17 +628,19 @@ umask的分数指的是“**默认值**需要**减掉**的权限”。文件默�
 drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 ```
 
-- Set UID
+##### Set UID (SUID)
+
+> 在执行时获得与文件所有者相同的权限
 
 当 `s` 这个标志出现在**文件拥有者**的 `x` 权限上，例如`-rwsr-xr-x`，就成为Set UID，简称SUID。基本上SUID有这样的限制与功能
 
-> - SUID 权限**仅对二进制程序** (binary program) 有效
-> 
-> - 执行者对于该程序需要具有 `x` 的可执行权限
-> 
-> - 本权限仅在执行该程序的过程中有效 (run-time)
-> 
-> - 执行者将遇有该程序拥有者 (owner) 的权限
+- SUID 权限**仅对二进制程序** (binary program) 有效
+
+- 执行者对于该程序需要具有 `x` 的可执行权限
+
+- 本权限仅在执行该程序的过程中有效 (run-time)
+
+- 执行者将遇有该程序拥有者 (owner) 的权限
 
 例如，`/etc/shadow` (存储着用户加密密码) 文件权限为
 
@@ -659,7 +661,9 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 
 
 
-- Set GID
+##### Set GID (SGID)
+
+> 新创建的文件和子目录将继承父目录的组所有权，而不是继承创建者的组所有权。
 
 当 `s` 这个标志出现在**群组**的 `x` 权限上，例如`-rwx--s--x`，就成为Set UID，简称SUID。基本上SUID有这样的限制与功能
 
@@ -684,13 +688,15 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 
 - 使用者在此目录下的有效群组，将变成该目录的群组
 
-- 如果使用者在此目录下具有 `w` 权限，则使用者创建的文件的群组，与此目录的群组相同
+- 如果使用者在此目录下具有 `w` 权限，则**使用者创建的文件的群组，与此目录的群组相同，而不是继承创建者**
 
 此权限对于专案开发来说非常重要！
 
 
 
-- Sticky Bit
+##### Sticky Bit (SBIT)
+
+> 只有目录所有者和root能够删除或重命名目录下的文件
 
 `drwxrwxrwt`
 
@@ -702,8 +708,6 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 
 也就是说如果 A 目录具有 SBIT 权限，则用户只能针对自己创建的文件或目录进行删除修改移动等操作，无法删除其他人的文件
 
-
-
 #### SUID/SGID/SBIT 权限的设置
 
 > 4, SUID
@@ -712,4 +716,146 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 > 
 > 1, SBIT
 
-假设要将 `file1` 权限修改为 `-rwsr-xr-x` ，因为 `s` 在使用者权限中，所以是 SUID，需要在原来的 `755` 前加上4，也就是`chmod 4755 file1`。此外还会有大写 `S` 和 `T` 的产生，例如：
+假设要将 `file1` 权限修改为 `-rwsr-xr-x` ，因为 `s` 在使用者权限中，所以是 SUID，需要在原来的 `755` 前加上4，也就是`chmod 4755 file1`。或者直接`chmod +s file`。此外还会有大写 `S` 和 `T` 的产生，例如：
+
+```bash
+[root@localhost testdir]# chmod 7666 file1
+[root@localhost testdir]# ll
+总用量 0
+-rwSrwSrwT. 1 root root 0 11月 19 14:47 file1
+```
+
+因为`file1` 的拥有者自身都没有 `x` 权限，怎么可能会有 SUID 权限呢。所以用大写 `S` 表示 SUID 为空权限
+
+#### file 命令
+
+查看某个文件的基本数据，例如输入 ASCII 还是 data 还是 binary。包括查看文件的 SUID 权限，是否用到动态函数库
+
+```bash
+[root@localhost ~]# file anaconda-ks.cfg 
+anaconda-ks.cfg: ASCII text
+[root@localhost ~]# file /usr/bin/ls
+/usr/bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=aaf05615b6c91d3cbb076af81aeff531c5d7dfd9, stripped
+```
+
+#### 搜索
+
+- where
+
+搜索可执行文件的路径（根据`$PATH`的路径）
+
+- whereis - 在特定的目录中寻找文件文件名
+
+- locate
+  用/var/lib/mlocate 数据库的记载搜索
+
+- updatebd
+  根据/etc/updatebd.conf 的设置搜寻硬盘名并更新到 /var/lib/mlocate
+
+`locate file1` ，只要有 passwd 在其中（路径和文件名），就会被显示出来。不过`locate` 只查找数据库中的内容，默认配置为每天刷新。手动刷新需要 `updatebd` 
+
+- find
+
+> 和时间有关的选项：
+> -mtime n：在 n 天前的“一天之内”被更动过内容的文件
+> -mtime +n：在 n 天前（不含 n ）被更动过内容的文件
+> -mtime -n ：在 n 天内（含 n ）被更动过内容的文件
+> -newer file ：file 为一个文件，列出比 file 新的文件
+
+例如：列出系统24小时内更改过的文件，和三天前的24h内更改过的文件
+
+```bash
+find / -mtime 0
+find / -mtime 3
+```
+
+寻找 /etc/ 下的文件，如果文件日期比 /etc/passwd 新就列出
+
+```bash
+find /etc/ -newer /etc/passwd
+```
+
+![find 相关的时间参数意义](assets/linux-basic/0a20810e1484cfb3ecd2bfcfbcdf746a149da9d2.gif)
+
+寻找 /home/ 下属于 cyo57 的文件
+
+```bash
+[root@localhost ~]# find /home/ -user cyo57
+```
+
+寻找系统中不属于任何人的文件
+
+```bash
+[root@localhost ~]# find / -nouser
+```
+
+#### 回顾
+
+1. 让一个使用者 dmtsai 能够进行“cp /dir1/file1 /dir2”的指令时，请说明 dir1, file1, dir2 的最小所需权限为何？
+
+> dir1: x
+> file1: r
+> dir2: wx
+
+2. 有一个文件全名为 /home/student/www/index.html ，各相关文件/目录的权限如下，请问 vbird 这个帐号（不属于student群组）能否读取 index.html 这个文件。
+
+```
+drwxr-xr-x 23 root    root    4096 Sep 22 12:09 /
+drwxr-xr-x  6 root    root    4096 Sep 29 02:21 /home
+drwx------  6 student student 4096 Sep 29 02:23 /home/student
+drwxr-xr-x  6 student student 4096 Sep 29 02:24 /home/student/www
+-rwxr--r--  6 student student  369 Sep 29 02:27 /home/student/www/index.html
+```
+
+> 无法读取，因为vbird无法进入 /home/student
+
+- **特殊目录符号**
+
+> . 当前目录
+> .. 父级目录
+> ~ home
+> ~name name用户的home
+> \- 上一次的目录
+
+- 能使用的指令依据 PATH 变量所规定的目录
+
+- ls 的 `-d` 可以用于查看目录权限，例如`ls -d dir2/`
+
+- `cat -n` 空行也会有行号，`nl` 不会
+
+- atime, ctime, mtime 其中`ls` 现实的显示是mtime
+
+- 在`Ext` 文件系统中的 attr 隐藏属性
+
+- umask 默认权限
+
+- SUID权限，运行**二进制**时使用文件拥有者的权限
+
+- SGID权限，运行**目录**下的文件时使用目录的组权限
+
+- SBIT权限，该目录下使用者创建的文件只有自己和root可以删除
+
+- `file` 查看文件类型
+
+- `which` 和 `type` 通过 `$PATH` 搜索文件名
+
+- 搜索文件的完整文件名 `whereis` 找特定目录，或者 `locate` 找数据库，而不搜索实际文件系统
+
+- `find`
+
+#### 练习
+
+1. 假设系统中有两个帐号，分别是 alex 与 arod ，这两个人除了自己群组之外还共同支持一个名为 project 的群组。假设这两个用户需要共同拥有 /srv/ahome/ 目录的开发权，且该目录不许其他人进入查阅。 
+   请问该目录的权限设置应为何？请先以传统权限说明，再以 SGID 的功能解析。
+
+```bash
+[root@study ~]# groupadd project        &lt;==增加新的群组
+[root@study ~]# useradd -G project alex &lt;==创建 alex 帐号，且支持 project
+[root@study ~]# useradd -G project arod &lt;==创建 arod 帐号，且支持 project
+[root@study ~]# id alex                 &lt;==查阅 alex 帐号的属性
+uid=1001（alex） gid=1002（alex） groups=1002（alex）,1001（project） &lt;==确实有支持！
+[root@study ~]# id arod
+uid=1002（arod） gid=1003（arod） groups=1003（arod）,1001（project） &lt;==确实有支持！
+```
+
+> 用传统的方式为 ahome 设置770，会导致用户a创建的文件用户b没有权限，此处需要用 SGID 进行设置
