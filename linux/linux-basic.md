@@ -240,7 +240,7 @@ chown也可以使用`chown user.group file` 将会同时修改所属群组
 
 或者使用（推荐）`chown user:group file` 同时修改群组
 
-`-R` 递回，即连同目录下的所有文件
+`[-R` 递回，即连同目录下的所有文件
 
 - `chmod` - 改变权限
 
@@ -254,7 +254,7 @@ chown也可以使用`chown user.group file` 将会同时修改所属群组
 
 **对目录只有`r`权限，只能读取目录树，无法读取文件。进入目录需要`x`权限**
 
-例题：假设有个帐号名称为cyo57，他的主文件夹在/home/cyo57/，cyo57对此目录具有`rwx`的权限
+[例题：假设有个帐号名称为cyo57，他的主文件夹在/home/cyo57/，cyo57对此目录具有`rwx`的权限
 
 ```bash
 -rwx------ 1 root  root  4365 Sep 19 23:20  the_root.data
@@ -659,8 +659,6 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 
 4. `/etc/shadow` 可以被 cyo57 执行的 `passwd` 修改
 
-
-
 ##### Set GID (SGID)
 
 > 新创建的文件和子目录将继承父目录的组所有权，而不是继承创建者的组所有权。
@@ -691,8 +689,6 @@ drwxrwxrwt. 29 root root 4096 11月 18 18:08 /tmp/
 - 如果使用者在此目录下具有 `w` 权限，则**使用者创建的文件的群组，与此目录的群组相同，而不是继承创建者**
 
 此权限对于专案开发来说非常重要！
-
-
 
 ##### Sticky Bit (SBIT)
 
@@ -849,13 +845,169 @@ drwxr-xr-x  6 student student 4096 Sep 29 02:24 /home/student/www
    请问该目录的权限设置应为何？请先以传统权限说明，再以 SGID 的功能解析。
 
 ```bash
-[root@study ~]# groupadd project        &lt;==增加新的群组
-[root@study ~]# useradd -G project alex &lt;==创建 alex 帐号，且支持 project
-[root@study ~]# useradd -G project arod &lt;==创建 arod 帐号，且支持 project
-[root@study ~]# id alex                 &lt;==查阅 alex 帐号的属性
-uid=1001（alex） gid=1002（alex） groups=1002（alex）,1001（project） &lt;==确实有支持！
+[root@study ~]# groupadd project        <==增加新的群组
+[root@study ~]# useradd -G project alex <==创建 alex 帐号，且支持 project
+[root@study ~]# useradd -G project arod <==创建 arod 帐号，且支持 project
+[root@study ~]# id alex                 <==查阅 alex 帐号的属性
+uid=1001（alex） gid=1002（alex） groups=1002（alex）,1001（project） <==确实有支持！
 [root@study ~]# id arod
-uid=1002（arod） gid=1003（arod） groups=1003（arod）,1001（project） &lt;==确实有支持！
+uid=1002（arod） gid=1003（arod） groups=1003（arod）,1001（project） <==确实有支持！
 ```
 
 > 用传统的方式为 ahome 设置770，会导致用户a创建的文件用户b没有权限，此处需要用 SGID 进行设置
+
+## 
+
+## 磁盘与文件系统管理
+
+#### Linux 的 EXT2 文件系统 (inode)
+
+文件系统一开始就将 inode 和 block 规划好了，除非重新格式化，否则 inode 和 block 就不再变动。
+Ext2 中假设某个文件的属性与权限在 inode4 ，而这个 inode 记录了文件数据的实际放置点
+
+![inode/block 数据存取示意图](./assets/linux-basic/filesystem-1-1700483198515-6.jpg)
+
+inode 记录的文件数据至少有：
+
+> r, w, x
+> group
+> 容量
+> ctime, atime, mtime
+> flag (例如Set UID)
+> 指向 (pointer)
+
+每个文件都会占用一个 inode, 包括新的 ACL 和 SELinux
+
+#### Linux 文件系统的运行
+
+Linux 中采用的方式是通过非同步处理 (asynchronously)：
+
+> 当系统载入一个文件到内存后，如果该文件没有被更动过，则在内存区段的文件数据会被设置为干净（clean）的。  但如果内存中的文件数据被更改过了（例如你用 nano 去编辑过这个文件），此时该内存中的数据会被设置为脏的  （Dirty）。此时所有的动作都还在内存中执行，并没有写入到磁盘中！  系统会不定时的将内存中设置为“Dirty”的数据写回磁盘，以保持磁盘与内存数据的一致性。 你也可以利用[第四章谈到的 sync](https://wizardforcel.gitbooks.io/vbird-linux-basic-4e/Text/index.html#sync)指令来手动强迫写入磁盘。
+
+- 系统会将常用的文件数据放置到内存的缓冲区
+- Linux 的实体内存最后都会被用光，加速系统性能
+- 可以手动 `sync` 强迫内存中 Dirty 的文件回写到磁盘
+- 正常关机时会主动调用 `sync` 将内存的数据回写入磁盘
+- 不正常关机（如跳电、死机或其他不明原因），由于数据尚未回写到磁盘内， 因此重新开机后可能会花很多时间在进行磁盘检验，甚至可能导致文件系统的损毁（非磁盘损毁）。
+
+#### 挂载点的意义 (mount point)
+
+挂载点一定是**目录**。该目录为该文件系统的入口。因此并不是任何文件系统都能使用，必须要挂载到目录树的某个目录，才能够使用该文件系统。
+举例来说，查看/, /boot, /home
+
+```bash
+[root@localhost ~]# ls -lid / /boot /home
+      64 dr-xr-xr-x. 18 root root  238 11月 19 21:29 /
+      64 dr-xr-xr-x.  5 root root 4096 11月 19 20:19 /boot
+50331763 drwxr-xr-x.  6 root root   58 11月 19 20:33 /home
+```
+
+最前面的数字就是 inode，因此可以发现/boot 和/home 是不同的文件系统。同一个filesystem的某个 inode 只会对应到一个文件内容。可以通过 inode 号码来确认是否为相同文件：
+
+```bash
+[root@localhost ~]# ls -lid / /. /..
+64 dr-xr-xr-x. 18 root root 238 11月 19 21:29 /
+64 dr-xr-xr-x. 18 root root 238 11月 19 21:29 /.
+64 dr-xr-xr-x. 18 root root 238 11月 19 21:29 /..
+```
+
+可以看到三个文件均在同一个 filesystem 内，inode 均为64，也就是在根目录下，三个路径是一模一样的
+
+查看本机 Linux 支持的文件系统和已载入到内存中支持的：
+
+```bash
+ls -l /lib/modules/$（uname -r）/kernel/fs
+cat /proc/filesystems
+```
+
+#### Linux VFS
+
+![VFS 文件系统的示意图](./assets/linux-basic/centos7_vfs-1700483125456-3-1700483222300-9.gif)
+
+#### XFS 文件系统
+
+CentOS 7开始，默认文件系统由 EXT4 转换为 XFS。
+
+Ext 文件系统采用的是预先规划出所有的 inode/block/meta data等数据，未来直接取用不再动态配置。而 XFS 文件系统是动态产生，所以格式化超级快。
+
+另外 XFS 的 block 和 inode 由多种不同的容量可以设置
+
+### 文件系统的简单操作
+
+#### 磁盘与目录的容量
+
+磁盘整体数据在 superblock 区块中，但每个个别文件的容量在 inode 中。
+
+- `df` 列出文件系统的整体磁盘使用量
+- `du` 评估文件系统的磁盘使用量
+
+> -a : 列出所有的文件与目录容量，因为默认仅统计目录下面的文件量
+> -s  ：列出总量，不列出每个目录占用
+> -S  ：不包括子目录下的总计，与 -s 有点差别。
+
+
+
+#### `ln` 硬链接与符号链接
+
+Linux 下的链接文件有两种，一种是类似于 Windows 快捷方式的文件，另一种是通过文件系统 inode 链接来产生新文件名，而不是新文件。
+
+![实体链接的文件读取示意图](./assets/linux-basic/hard_link1-1700487068474-13.gif)
+
+- Hard Link
+
+多个文件名对应到同一个 inode 号码，只是在某个目录下新增一笔文件名链接到某 inode 号码的关连记录而已。除了文件名所有相关信息一模一样。
+由图可知， hardlink 应该仅能在单一文件系统中进行，不能跨文件系统，也不能link目录
+
+- Symbolic Link
+
+和 Windows 快捷方式类似
+
+![symbolic_link1](./assets/linux-basic/symbolic_link1-1700487223070-18-1700487225105-20-1700487226461-22-1700487227824-24.gif)
+
+> [root@study ~]# ln [-sf] 来源文件 目标文件
+> 选项与参数：
+> -s  ：如果不加任何参数就进行链接，那就是hard link，至于 -s 就是symbolic link
+> -f  ：如果 目标文件 存在时，就主动的将目标文件直接移除后再创建！
+
+把 /etc/passwd 复制到 /tmp 观察inode 和 block
+创建硬链接到 passwd-hl 和 软链接到 passwd-sl
+
+```bash
+[root@localhost tmp]# ll -i | grep passwd
+17195826 -rw-r--r--. 2 root  root    2385 11月 20 20:28 passwd
+17195826 -rw-r--r--. 2 root  root    2385 11月 20 20:28 passwd-hl
+17197625 lrwxrwxrwx. 1 root  root       6 11月 20 20:29 passwd-sl -> passwd
+```
+
+用 `ls -i` 查看inode 可知为同一个文件
+
+**关于目录的 link 数量**
+
+创建一个新目录名为 /tmp/test 时，目录会有三个东西
+
+```bash
+/tmp/test
+/tmp/test/.
+/tmp/test/..
+```
+
+其中 `/.` 和 `/tmp/test/` 是一样的，`/tmp/test/..` 代表 `/tmp` ，所以新目录 link 数为 2，上层目录 link 会+1
+
+### 分区、格式化、检验、挂载
+
+Linux 中，磁盘名通常为 /dev/sd[a-p]
+
+- 列出系统上所有磁盘列表
+
+`lsblk` (list block device)
+`blkid` 列出设备UUID (或 `lsblk -f`)
+`parted /dev/sda print` 列出磁盘的分区表类型和分区信息
+
+
+
+#### gdisk/fdisk 分区
+
+> MBR 使用 fdisk 分区，GPT 使用 gdisk 分区
+
+
+
