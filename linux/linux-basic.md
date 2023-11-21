@@ -997,6 +997,8 @@ Linux 下的链接文件有两种，一种是类似于 Windows 快捷方式的�
 
 Linux 中，磁盘名通常为 /dev/sd[a-p]
 
+#### 观察磁盘分区状态
+
 - 列出系统上所有磁盘列表
 
 `lsblk` (list block device)
@@ -1009,5 +1011,183 @@ Linux 中，磁盘名通常为 /dev/sd[a-p]
 
 > MBR 使用 fdisk 分区，GPT 使用 gdisk 分区
 
+- 用 `gdisk` 新增分区
+  1GB 的 xfs 文件系统
+  1GB 的 vfat 文件系统
+  0.5GB 的 swap （等下会删除）
+
+```bash
+[root@localhost ~]# gdisk /dev/sdb 
+GPT fdisk (gdisk) version 0.8.10
+
+Partition table scan:
+  MBR: not present
+  BSD: not present
+  APM: not present
+  GPT: not present
+
+Creating new GPT entries.
+
+Command (? for help):
+```
+
+使用 `n` 新增
+
+```bash
+Command (? for help): n
+Partition number (1-128, default 1): # 新硬盘直接默认
+First sector (34-10485726, default = 2048) or {+-}size{KMGTP}: 	#直接默认
+Last sector (2048-10485726, default = 10485726) or {+-}size{KMGTP}: +1G	#使用+-的方式
+Current type is 'Linux filesystem'
+Hex code or GUID (L to show codes, Enter = 8300): 	# 文件系统，默认为linux
+Changed type of partition to 'Linux filesystem'
+
+Command (? for help): p		# 查看当前的分区
+Disk /dev/sdb: 10485760 sectors, 5.0 GiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): 6C59F49E-E067-4306-9FBF-3A2517CDA110
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 10485726
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 8388541 sectors (4.0 GiB)
+
+# 预览创建的新分区
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         2099199   1024.0 MiB  8300  Linux filesystem
+
+# 最后记得w写入，否则不会生效
+Command (? for help): w
+
+Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING
+PARTITIONS!!
+```
+
+分区创建完毕，我们需要更新分区表。一种方法是重启，另一个则是通过 `partprobe` 处理（`-s` 参数可以看到更多信息）
+
+- 使用 `gdisk` 删除分区
+
+```bash
+Command (? for help): d		# 删除分区
+Partition number (1-3): 3	# 删除的分区号
+
+Command (? for help): p		# 可以看到已经被删除了，保存即可
+Disk /dev/sdb: 10485760 sectors, 5.0 GiB
+Logical sector size: 512 bytes
+Disk identifier (GUID): 4B3FCDF4-2C44-4179-80E4-B13EB78CF84E
+Partition table holds up to 128 entries
+First usable sector is 34, last usable sector is 10485726
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 6291389 sectors (3.0 GiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048         2099199   1024.0 MiB  8300  Linux filesystem
+   2         2099200         4196351   1024.0 MiB  0700  Microsoft basic data
+
+Command (? for help): w		# 一定要保存
+```
+
+> 千万不要修改一个正在使用中的分区，如果要操作必须要先卸载。否则硬盘还是会写入正确的分区信息，但是核心无法更新分区表信息。
 
 
+
+- 使用 `fdisk` 
+
+和 `gdisk` 几乎一模一样
+
+
+
+#### mkfs 磁盘格式化
+
+分区完毕后当然要对磁盘进行格式化
+
+- XFS 文件系统 `mkfs.xfs`
+
+将前一节分区出来的格式化为 xfs 文件系统，最简单的命令就是 `mkfs.xfs /dev/sdb1` 全部采用默认值。如果有其他额外的处理项目，才需要设置，例如 xfs 可以使用多个数据流，因此 agcount 可以和 CPU 核心搭配
+
+```bash
+# 查看cpu数量并设置 agcount 数值
+[root@localhost ~]# grep 'processor' /proc/cpuinfo 
+processor       : 0
+processor       : 1
+[root@localhost ~]# mkfs.xfs -f -d agcount=2 /dev/sdb1
+meta-data=/dev/sdb1              isize=512    agcount=2, agsize=131072 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=262144, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
+
+- XFS 文件系统 for RAID
+
+磁盘阵列 （RAID） 就是通过将文件先细分为数个小型的分区区块 （stripe） 之后，然后将众多的 stripes 分别放到磁盘阵列里面的所有磁盘， 所以一个文件是被同时写入到多个磁盘去，当然性能会好一些。
+
+- EXT4 文件系统 mkfs.ext4
+
+- 其他文件系统 `mkfs`
+
+`mkfs`  是综合性指令，使用 `mkfs -t xfs` 就会列出 `mkfs.xfs` 的参数
+
+#### 文件系统校验
+
+- 使用 `xfs_repair` 处理 XFS 文件系统
+
+> [root@study ~]# xfs_repair [-fnd] 设备名称
+> 选项与参数：
+> -f  ：后面的设备其实是个文件而不是实体设备
+> -n  ：单纯检查并不修改文件系统的任何数据 （检查而已）
+> -d  ：通常用在单人维护模式下面，针对根目录 （/） 进行检查与修复的动作！很危险！不要随便使用
+
+检查一下上节创建的 /dev/sdb1 的 xfs 文件系统
+
+```bash
+[root@localhost ~]# xfs_repair /dev/sdb1
+Phase 1 - find and verify superblock...
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan and clear agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 1
+Phase 5 - rebuild AG headers and trees...
+        - reset superblock...
+Phase 6 - check inode connectivity...
+        - resetting contents of realtime bitmap and summary inodes
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify and correct link counts...
+done
+```
+
+一共七个流程
+
+检查一下系统原有的 /dev/centos/home 文件系统
+
+```bash
+[root@localhost ~]# xfs_repair /dev/centos/root
+xfs_repair: /dev/centos/root contains a mounted filesystem
+xfs_repair: /dev/centos/root contains a mounted and writable filesystem
+
+fatal error -- couldn't initialize XFS library
+```
+
+发现要修复的设备已经被挂载，修复时分区不能挂载。需要卸载后再处理
+
+Linux下 如果Linux的根目录出问题，只能进入单人维护或者救援模式，通过 `-d` 来处理了。
+
+- `fsck.ext4` 处理 EXT4 文件系统
+
+`fsck` 是综合指令，针对 EXT4 直接用 `fsck.ext4` 比较妥当
