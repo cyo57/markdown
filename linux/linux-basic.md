@@ -924,11 +924,11 @@ cat /proc/filesystems
 
 ![VFS 文件系统的示意图](./assets/linux-basic/centos7_vfs-1700483125456-3-1700483222300-9.gif)
 
-#### XFS 文件系统
+#### XFS 文件系统he
 
 CentOS 7开始，默认文件系统由 EXT4 转换为 XFS。
 
-Ext 文件系统采用的是预先规划出所有的 inode/block/meta data等数据，未来直接取用不再动态配置。而 XFS 文件系统是动态产生，所以格式化超级快。
+heExt 文件系统采用的是预先规划出所有的 inodhee/block/meta data等数据，未来直接取用不再动态配置。而 XFS 文件系统是动态产生，所以格式化超级快。
 
 另外 XFS 的 block 和 inode 由多种不同的容量可以设置
 
@@ -1191,3 +1191,222 @@ Linux下 如果Linux的根目录出问题，只能进入单人维护或者救援
 - `fsck.ext4` 处理 EXT4 文件系统
 
 `fsck` 是综合指令，针对 EXT4 直接用 `fsck.ext4` 比较妥当
+
+```bash
+[root@localhost ~]# fsck.ext4 /dev/sdb2
+e2fsck 1.42.9 (28-Dec-2013)
+/dev/sdb2: clean, 11/65536 files, 12955/262144 blocks
+```
+
+文件系统正常并不会进入检查，挥涕是系统没问题。使用 `-f`会进入强制检查。正常情况下使用此指令可能造成系统危害。
+
+#### 文件系统挂载与卸载
+
+##### mount
+
+- 单一文件系统不应该重复挂载到不同的挂载点
+- 单一目录不应该重复挂载多个文件系统
+- 作为挂载点的目录应该为空
+
+在 CentOS 7 中，系统会自动读欲挂载分区的 superblock 以判断 filesystem
+
+- /etc/filesystems : 系统制定的测试挂载文件系统类型的优先顺序
+- /proc/filesystems : Linux 系统已经载入的文件系统类型
+
+查看 Linux 中支持的文件系统驱动路径，例如 ext4
+
+- /lib/modules/$ (uname -r)/kernel/fs/ext4
+
+**使用 UUID 识别文件系统，并进行挂载**
+
+```bash
+[root@localhost ~]# mount UUID="764e398f-7045-4051-b199-6f5c919fac15" /data/xfs
+[root@localhost ~]# df /data/xfs -h
+文件系统        容量  已用  可用 已用% 挂载点
+/dev/sdb1      1014M   33M  982M    4% /data/xfs
+```
+
+- 重新挂载根目录与挂载不特定目录
+
+例如根目录出现“只读”情况，需要重新挂载：`mount -o remount,rw,auto /`
+重点在于 `-o mount, xx` 参数
+
+- 将目录挂载到另一个目录去
+
+```bash
+[root@localhost ~]# mount --bind /var /data/var[root@localhost ~]# ll -id /data/var /var
+50331713 drwxr-xr-x. 21 root root 4096 11月 15 15:58 /data/var
+50331713 drwxr-xr-x. 21 root root 4096 11月 15 15:58 /var
+```
+
+两者链接到同一个 inode, 与硬链接相似。通过`mount --bind` 将目录挂载到其他目录，而不是整块 filesystem
+
+##### umount
+
+卸载的方式，可以下达设备文件名或挂载点
+
+> [root@study ~]# umount [-fn] 设备文件名或挂载点
+> 选项与参数：
+> -f  ：强制卸载！可用在类似网络文件系统 （NFS） 无法读取到的情况下；
+> -l  ：立刻卸载文件系统，比 -f 还强！
+> -n  ：不更新 /etc/mtab 情况下卸载。
+
+### 磁盘/文件系统参数修改
+
+修改 Label name 等参数
+
+- mknod
+
+前文说过，在 Linux 下所有的设备都以文件来代表。`ll /dev/sda*`
+*mark 太难了不想学
+
+- xfs_admin 修改 XFS 文件系统的 UUID 和 Label name
+
+> ```
+> [root@study ~]# xfs_admin [-lu] [-L label] [-U uuid] 设备文件名
+> 选项与参数：
+> -l  ：列出这个设备的 label name
+> -u  ：列出这个设备的 UUID
+> -L  ：设置这个设备的 Label name
+> -U  ：设置这个设备的 UUID 喔！
+> ```
+
+```bash
+[root@localhost ~]# xfs_admin -L cyo57_xfs /dev/sdb1
+writing all SBs
+new label = "cyo57_xfs"
+[root@localhost ~]# blkid /dev/sdb1
+/dev/sdb1: LABEL="cyo57_xfs" UUID="764e398f-7045-4051-b199-6f5c919fac15" TYPE="xfs" PARTLABEL="Linux filesystem" PARTUUID="6e9fe2df-d235-46e5-b5a3-34b99a582752"
+```
+
+可以利用 `uuidgen` 生成新 UUID 来设置 /dev/sdb1 并测试挂载
+
+- `tune2fs` 修改 ext4 的 label name 与 UUID
+
+类似于xfs_admin，参考`man tune2fs`
+
+### 开机挂载
+
+#### /etc/fstab 和 /etc/mtab
+
+系统限制
+
+- 根目录是必须挂载的
+- mount point 必须是以创建的目录，遵守FHS
+- mount point 在同一时间只能挂载一次
+- partition 在同一时间只能挂载一次
+- 卸载目录必须先切换到 mount point 之外
+
+其中 /etc/fstab 就是我们利用 mount 指令挂载时，系统将参数写入到此文件中
+
+#### 特殊设备 loop 挂载
+
+- 挂载光盘镜像文件
+
+```bash
+[root@localhost ~]# mount -o loop /tmp/CentOS-7.0-1406-x86_64-DVD.iso /data/centos_dvd
+[root@localhost ~]# df /data/centos_dvd
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/loop0       4050860 4050860         0 100% /data/centos_dvd
+
+# 其实在CentOS7上，不加-o loop也可以正常挂载
+```
+
+- 创建大文件制作 loop 设备文件
+
+制作一个文件然后挂载，就像多了一个分区。使用 `dd` 创建空文件
+
+```bash
+[root@localhost testdir]# dd if=/dev/zero of=/srv/loopdev bs=1M count=512
+记录了512+0 的读入
+记录了512+0 的写出
+536870912字节(537 MB)已复制，0.223703 秒，2.4 GB/秒
+
+# if    是 input file ，输入文件。那个 /dev/zero 是会一直输出 0 的设备！
+# of    是 output file ，将一堆零写入到后面接的文件中。
+# bs    是每个 block 大小，就像文件系统那样的 block 意义；
+# count 则是总共几个 bs 的意思。所以 bs*count 就是这个文件的容量了！
+```
+
+- 自动挂载
+
+添加到 /etc/fstab 中，`/srv/loopdev  /data/file  xfs  defaults**,loop**   0 0`
+
+### swap创建
+
+假设系统创建完毕后，发现没有 swap 分区。
+
+- 设置一个 swap partition
+- 创建一个swap 文件
+
+#### 使用实体分区创建 swap
+
+1. 分区，通过 `gdisk` 分区作为 swap。由于 `gdisk` 默认将分区id设置为 linux filesystem，还需设置一下 system id
+2. 格式化，使用 `mkswap`
+3. 将 swap 设备启动，`swapon /dev/xxx`，使用 `-s` 参数查看swap
+4. 检查，通过 `free` 和 `swapon -s` 观察用量
+
+#### 使用文件创建swap
+
+1. 创建空文件 `dd if=/dev/zero of=/tmp/swap bs=1M count=512`
+2. 格式化，使用 `mkswap`
+3. 将 `swap` 设备启动，使用 `swapon`，使用 `-s` 参数查看
+4. 讲 `swap` 设备关闭，使用 `swapoff`，设置自动启动（修改 /etc/fstab，`/tmp/swap  swap  swap  defaults  0  0`）
+
+### 文件系统的特殊观察与操作
+
+#### 磁盘空间浪费的问题
+
+之前 EXT2 data block 介绍中了解到一个 block 只能放置一个文件，如果太多小文件就会浪费很多磁盘容量。包括 superblock, inode talbe和其他数据都会浪费磁盘容量。使用`ls -sl` 查看 "total" 列，就是数据所耗的实际 block 数量
+
+#### 利用 parted 进行分区
+
+使用 `gdisk` 或 `fdisk` 分区之前，需要先查询正确到分区表类型才能使用。而 `parted` 是两者同时支持
+
+## 文件与文件系统的压缩，打包，备份
+
+### 常见压缩命令
+
+Linux 中常用的压缩格式，压缩率xz > bz2 > gz，但相对应压缩所需要的时间也增加了
+
+```
+*.Z         compress
+*.zip       
+*.gz        gzip
+*.bz2       bzip2
+*.xz        xz
+*.tar       tar 打包
+*.tar.gz    tar 打包，gzip 压缩
+*.tar.bz2   tar 打包，bzip2 压缩
+*.tar.xz    tar 打包，xz 压缩
+# 因为 bzip2 和 xz 只支持单文件压缩，所以先使用 tar 打包为一个文件
+```
+
+#### gzip, zcat/zmore/zless/zgrep
+
+gzip可以解压缩 zip, gz 等。
+
+我们知道`cat`, `more`, `grep`可以用来读取文本，而`zcat`, `zmore`, `zless`, `zgrep` 则是用来读取压缩后的文本文件
+
+#### bzip2, bzcat/bzmore/bzless/bzgrep
+
+gzip 是取代 compress 而诞生的，bzip2 则是取代 gzip 而诞生，提供更高的压缩比。用法和 gzip 几乎相同
+
+#### xz, xzcat/xzmore/xzless/xzgrep
+
+xz 则又是取代 bzip2 而诞生，用法也跟前者几乎一样，详细看 `--help`
+
+#### tar 打包
+
+前文所写的压缩软件虽然也能针对目录进行压缩，但指的是“将目录内的所有文件分别压缩”，而不是直接打包成一个文件并压缩。
+
+`tar` 可以将多个文件打包为一个大文件，然后使用 gz/bz2/xz 等格式进行压缩
+
+##### tar 常用命令
+
+- 压缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称
+- 查询：tar -jtv -f filename.tar.bz2
+- 解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录
+
+示例：备份 /etc 目录 `tar -zpcv -f /root/etc.tar.gz /etc`。`-p` 保留原始权限，`-v` 显示日志。
+`tar` 默认会将文件路径的根目录移除，防止解压时主机数据被覆盖
