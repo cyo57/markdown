@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "2c8e8fc8c7abf69c",
+        "id": "ce27051d9e64443b",
         "type": "tabs",
         "children": [
           {
-            "id": "92fd663b42f6ac64",
+            "id": "1098114ad76d73ef",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "linux/linux-basic/磁盘和分区.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "dd3a41121b178f8a",
@@ -81,13 +87,14 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "linux/linux-basic/磁盘和分区.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -97,6 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "linux/linux-basic/磁盘和分区.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,26 +126,49 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "linux/linux-basic/磁盘和分区.md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 237.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "92fd663b42f6ac64",
-  "lastOpenFiles": []
+  "active": "1098114ad76d73ef",
+  "lastOpenFiles": [
+    "linux/linux-basic/权限.md",
+    "linux/linux-basic/linux-basic-review.md",
+    "linux/linux-basic/进程管理.md",
+    "linux/linux-basic/路径与目录.md",
+    "linux/linux-basic/磁盘和分区.md",
+    "linux/openstack/OpenStack 搭建流程.canvas",
+    "linux/linux-basic/assets/Pasted image 20231207172738.png",
+    "linux/linux-basic/linux-basic.md",
+    "linux/linux-basic/assets/pe_vg.gif",
+    "raid5.gif.md",
+    "linux/openstack/OpenStack-Install-Doc.md",
+    "linux/cloud-computing.md",
+    "README.md",
+    "未命名 1.canvas",
+    "raid5.gif",
+    "2023-12-06.md",
+    "2023-12-05.md",
+    "linux/linux-basic/WEB 服务.md",
+    "cad/JianZhuGongCheng.md",
+    "linux/openstack"
+  ]
 }

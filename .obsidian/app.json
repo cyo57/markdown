@@ -1,1 +1,7 @@
-{}
+{
+  "strictLineBreaks": true,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "attachmentFolderPath": "./assets",
+  "newFileLocation": "current"
+}

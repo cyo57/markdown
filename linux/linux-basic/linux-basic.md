@@ -619,7 +619,7 @@ Filesystem     1K-blocks    Used Available Use% Mounted on
 制作一个文件然后挂载，就像多了一个分区。使用 `dd` 创建空文件
 
 ```bash
-[root@localhost testdir]# dd if=/dev/zero of=/srv/loopdev bs=1M count=512
+[root@localhost testdir]# dd if=/dev/zero of=/~ bs=1M count=512
 记录了512+0 的读入
 记录了512+0 的写出
 536870912字节(537 MB)已复制，0.223703 秒，2.4 GB/秒

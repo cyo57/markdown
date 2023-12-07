@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"41839c55cb4b184b","type":"group","x":660,"y":-480,"width":1300,"height":620,"label":"安装脚本"},
+		{"id":"a5e32ae262caf1e8","type":"group","x":-400,"y":0,"width":910,"height":280,"label":"Controller 准备"},
+		{"id":"8462065782ed41b6","type":"group","x":660,"y":320,"width":520,"height":200,"label":"Compute 准备"},
+		{"id":"57916873b3f5f4b1","type":"text","text":"克隆 compute\n\n","x":680,"y":340,"width":260,"height":160,"color":"6"},
+		{"id":"ed66503e6a1296e8","type":"text","text":"set-hostname\n","x":970,"y":340,"width":190,"height":160,"color":"6"},
+		{"id":"c3f59ee36e0deef6","type":"text","text":"Controller","x":-380,"y":30,"width":140,"height":72,"color":"3"},
+		{"id":"c500d33b60555096","type":"text","text":"设置网卡\n\n关闭SELinux\n\n关闭防火墙\n\n修改hosts\n\n修改hostname","x":-200,"y":30,"width":180,"height":235,"color":"3"},
+		{"id":"b8c9b1130f955b37","type":"text","text":"配置本地yum源\n\n安装常用软件\n\nvim\n\nopenstack-iaas\n\nbash-completion","x":0,"y":30,"width":200,"height":235,"color":"3"},
+		{"id":"b21f925540bdf9cd","type":"text","text":"修改OpenStack安装脚本\n\n`/etc/openstack/openrc.sh`","x":220,"y":30,"width":260,"height":235,"color":"3"},
+		{"id":"7c864bc4dbbf160d","type":"text","text":"双节点\n\n`source /etc/openstack/openrc.sh`\n\n`iaas-pre-host.sh`\n\n`reboot`","x":680,"y":-424,"width":320,"height":204,"color":"5"},
+		{"id":"91f8a7165b3ccbd8","type":"text","text":"# controller 基础服务\n\niaas-install-mysql.sh # 数据库\n\niaas-install-keystone.sh # 验证\n\niaas-install-glance.sh # 镜像管理\n\niaas-install-placement.sh # 管理和分配云计算资源\n\niaas-install-nova-controller.sh # 虚拟机创建、调度\n\niaas-install-neutron-controller.sh # 网络服务\n\niaas-install-dashboard.sh # 面板\n\n# controller 高级服务\n\niaas-install-cinder-controller.sh # 块模块\n\niaas-install-swift-controller.sh # 对象存储模块","x":1020,"y":-424,"width":440,"height":504,"color":"3"},
+		{"id":"cbf1dbf82cb1e634","type":"text","text":"# compute 基础服务\n\niaas-install-nova-compute.sh\n\niaas-install-neutron-compute.sh\n\n# compute高级服务\niaas-install-cinder-compute.sh\n\niaas-install-swift-compute.sh","x":1480,"y":-424,"width":440,"height":504,"color":"6"},
+		{"id":"c3312900438adcd5","type":"text","text":"# 备注\n\n先安装 controller 服务\n\n后安装 compute 服务","x":680,"y":-80,"width":320,"height":160}
+	],
+	"edges":[
+		{"id":"306914a8b318f251","fromNode":"c3f59ee36e0deef6","fromSide":"right","toNode":"c500d33b60555096","toSide":"left"},
+		{"id":"f0fd9096e257fc73","fromNode":"c500d33b60555096","fromSide":"right","toNode":"b8c9b1130f955b37","toSide":"left"},
+		{"id":"b9a57c3f5d75adad","fromNode":"b8c9b1130f955b37","fromSide":"right","toNode":"b21f925540bdf9cd","toSide":"left"},
+		{"id":"a288592c275912d1","fromNode":"57916873b3f5f4b1","fromSide":"right","toNode":"ed66503e6a1296e8","toSide":"left"},
+		{"id":"a72b47199090cab1","fromNode":"8462065782ed41b6","fromSide":"right","toNode":"41839c55cb4b184b","toSide":"bottom"},
+		{"id":"820013b5064bf9c2","fromNode":"a5e32ae262caf1e8","fromSide":"right","toNode":"41839c55cb4b184b","toSide":"left"},
+		{"id":"dc9a92d04755bb3f","fromNode":"a5e32ae262caf1e8","fromSide":"right","toNode":"8462065782ed41b6","toSide":"left","label":"克隆"}
+	]
+}
