@@ -58,3 +58,27 @@ www     A       192.168.200.129
 ```
 
 - 关闭 SELinux
+
+
+## Apache (httpd)
+
+### 概念
+
+### 修改配置文件
+
+- 在 `/etc/httpd/conf.d/` 下创建文件 `*.conf`
+```json
+<virtualhost *:80>
+        servername www.aaa.com
+        documentroot /var/httpd/aaa/ # 任意路径
+        <directory /var/httpd/aaa>
+                require all granted
+        </directory>
+</virtualhost>
+```
+
+### 创建 html
+
+- 在 `.conf` 中指定的路径下创建 `index.html`
+
+### 启动服务
