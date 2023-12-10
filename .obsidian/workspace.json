@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/linux-basic/磁盘和分区.md",
+                "file": "linux/linux-basic/web 服务.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/linux-basic/磁盘和分区.md",
+                "file": "linux/linux-basic/web 服务.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/linux-basic/磁盘和分区.md",
+                "file": "linux/linux-basic/web 服务.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,12 +127,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/linux-basic/磁盘和分区.md"
+                "file": "linux/linux-basic/web 服务.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -150,12 +150,16 @@
   },
   "active": "1098114ad76d73ef",
   "lastOpenFiles": [
-    "linux/linux-basic/权限.md",
+    "linux/linux-basic/磁盘和分区.md",
+    "linux/linux-basic/web 服务.md",
     "linux/linux-basic/linux-basic-review.md",
+    "linux/linux-basic/FTP 服务.md",
+    "linux/linux-basic/WEB 服务.md",
+    "linux/linux-basic/assets/12979420-8912851ab578a754.webp",
+    "linux/openstack/OpenStack 搭建流程.canvas",
+    "linux/linux-basic/权限.md",
     "linux/linux-basic/进程管理.md",
     "linux/linux-basic/路径与目录.md",
-    "linux/linux-basic/磁盘和分区.md",
-    "linux/openstack/OpenStack 搭建流程.canvas",
     "linux/linux-basic/assets/Pasted image 20231207172738.png",
     "linux/linux-basic/linux-basic.md",
     "linux/linux-basic/assets/pe_vg.gif",
@@ -167,7 +171,6 @@
     "raid5.gif",
     "2023-12-06.md",
     "2023-12-05.md",
-    "linux/linux-basic/WEB 服务.md",
     "cad/JianZhuGongCheng.md",
     "linux/openstack"
   ]
