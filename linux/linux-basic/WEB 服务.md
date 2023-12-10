@@ -69,8 +69,8 @@ www     A       192.168.200.129
 - 在 `/etc/httpd/conf.d/` 下创建文件 `*.conf`
 ```json
 <virtualhost *:80>
-        servername www.aaa.com
-        documentroot /var/httpd/aaa/ # 任意路径
+		servername www.aaa.com    <!-- 指定域名 -->
+        documentroot /var/httpd/aaa/ <!-- 指定页面目录 -->
         <directory /var/httpd/aaa>
                 require all granted
         </directory>
