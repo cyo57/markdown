@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ce27051d9e64443b",
+        "id": "759e0ee6b7a3f5fa",
         "type": "tabs",
         "children": [
           {
-            "id": "1098114ad76d73ef",
+            "id": "089e1388df8ce2e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/linux-basic/web 服务.md",
+                "file": "linux/docker/2. 安装.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 293.5,
     "collapsed": true
   },
   "right": {
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/linux-basic/web 服务.md",
+                "file": "linux/docker/2. 安装.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/linux-basic/web 服务.md",
+                "file": "linux/docker/2. 安装.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/linux-basic/web 服务.md"
+                "file": "linux/docker/2. 安装.md"
               }
             }
           }
@@ -148,23 +148,27 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "1098114ad76d73ef",
+  "active": "089e1388df8ce2e1",
   "lastOpenFiles": [
+    "linux/docker/1. 介绍.md",
+    "linux/docker/2. 安装.md",
+    "box/geek.md",
+    "linux/docker",
+    "linux/linux-basic/进程管理.md",
     "linux/linux-basic/磁盘和分区.md",
-    "linux/linux-basic/web 服务.md",
+    "linux/openstack/OpenStack-Install-Doc.md",
+    "linux/openstack/OpenStack 搭建流程.canvas",
     "linux/linux-basic/linux-basic-review.md",
+    "linux/linux-basic/web 服务.md",
     "linux/linux-basic/FTP 服务.md",
     "linux/linux-basic/WEB 服务.md",
     "linux/linux-basic/assets/12979420-8912851ab578a754.webp",
-    "linux/openstack/OpenStack 搭建流程.canvas",
     "linux/linux-basic/权限.md",
-    "linux/linux-basic/进程管理.md",
     "linux/linux-basic/路径与目录.md",
     "linux/linux-basic/assets/Pasted image 20231207172738.png",
     "linux/linux-basic/linux-basic.md",
     "linux/linux-basic/assets/pe_vg.gif",
     "raid5.gif.md",
-    "linux/openstack/OpenStack-Install-Doc.md",
     "linux/cloud-computing.md",
     "README.md",
     "未命名 1.canvas",

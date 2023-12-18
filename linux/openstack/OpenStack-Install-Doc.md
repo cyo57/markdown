@@ -260,3 +260,158 @@ openstack server add floating ip centos7.9-kang 192.168.200.111
 /etc/neutron/plugins/ml2
 ```
 
+## 模块使用
+
+### Keystone
+
+#### 管理用户 ( #user)
+
+##### 创建
+
+> 创建一个名称为alice，密码为mypassword123，邮箱为 alice@exa.c 的用户
+
+```bash
+source /etc/keystone/admin-openrc.sh
+# .可以替代source
+openstack user create alice --domain demo --password mypassword123 --email alice@exa.com
+```
+
+##### 查询
+
+```bash
+[root@controller ~]# openstack user list
++----------------------------------+-----------+
+| ID                               | Name      |
++----------------------------------+-----------+
+| dc139d39f0d44372a913b4b96b2736d8 | admin     |
+| daaf7611d7564893838014e57551fc73 | demo      |
+| 3b6222db2ac34576b0433a2d3d476163 | glance    |
+| 5cd5e36a3e804a4d8ee041bd7d5dc9d2 | placement |
+| d0de0361752440678a18e582311483d7 | nova      |
+| 3d6833fbbdb540a8846ee8026cd88a75 | neutron   |
+| 32d76ad40b414b4aa3b79eac92212cb5 | cinder    |
+| 230d20f3aaa24dad816b29fc5c8373f4 | swift     |
+| 2f55b6ec27184a5d8d346b110999c334 | alice     |
++----------------------------------+-----------+
+```
+
+#### 管理项目 ( #project)
+
+##### 创建
+
+> 一个 Project 就是一个项目，请求 OpenStack 服务时，必须定义一个项目。
+
+> 创建一个名为 acme 的项目
+
+```bash
+[root@controller ~]# openstack project create --domain demo acme
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description |                                  |
+| domain_id   | 1e47123324dd43c1add10c6b6a3699d1 |
+| enabled     | True                             |
+| id          | 4a72671997494955981e5990acb643e7 |
+| is_domain   | False                            |
+| name        | acme                             |
+| options     | {}                               |
+| parent_id   | 1e47123324dd43c1add10c6b6a3699d1 |
+| tags        | []                               |
++-------------+----------------------------------+
+```
+
+##### 查询
+
+```bash
+openstack project list
+```
+
+#### 管理角色 ( #role)
+
+##### 创建
+
+> 角色定义了用户的操作权限。
+
+> 创建一个角色 compute-user
+
+```bash
+[root@controller ~]# openstack role create --domain demo compute-user
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description | None                             |
+| domain_id   | 1e47123324dd43c1add10c6b6a3699d1 |
+| id          | 2e6c72b9bb2240c2b441077ef530a68c |
+| name        | compute-user                     |
+| options     | {}                               |
++-------------+----------------------------------+
+```
+
+##### 查询
+
+```bash
+openstack role list
+```
+
+
+#### 绑定角色和项目权限 
+
+> 给用户“alice”分配“acme”项目下的“compute-user”角色
+
+```bash
+openstack role add --user alice --project acme 2e6c72b9bb2240c2b441077ef530a68c
+
+# 这里出了点小问题，用name会报错，所以用role id来添加
+# No role with a name or ID of 'compute-user' exists
+```
+
+#### 端点地址查询 ( #endpoint)
+
+> Keystone 组件管理 OpenStack 平台中所有服务端点信息
+
+```bash
+openstack endpoint list
+```
+
+
+### Glance
+
+#### 创建镜像
+
+```bash
+[root@controller images]# openstack image create cirros-0.3.4-x86_64-disk.img --public
++------------------+------------------------------------------------------+
+| Field            | Value                                                |
++------------------+------------------------------------------------------+
+| checksum         | None                                                 |
+| container_format | bare                                                 |
+| created_at       | 2023-12-12T14:20:09Z                                 |
+| disk_format      | raw                                                  |
+| file             | /v2/images/ec6311ae-ad2b-48ff-8edc-f00f5bde2e0e/file |
+| id               | ec6311ae-ad2b-48ff-8edc-f00f5bde2e0e                 |
+| min_disk         | 0                                                    |
+| min_ram          | 0                                                    |
+| name             | cirros-0.3.4-x86_64-disk.img                         |
+| owner            | 6cef4586c6e14629880f3790be181f81                     |
+| properties       | os_hash_algo=, os_hash_value=, os_hidden='False'     |
+| protected        | False                                                |
+| schema           | /v2/schemas/image                                    |
+| size             | None                                                 |
+| status           | queued                                               |
+| tags             |                                                      |
+| updated_at       | 2023-12-12T14:20:09Z                                 |
+| virtual_size     | None                                                 |
+| visibility       | public                                               |
++------------------+------------------------------------------------------+
+```
+
+```bash
+glance image-create --name "cirros" --disk-format qcow2 --container-format bare --progress < cirros-0.3.4-x86_64-disk.img
+```
+#### 查看列表
+
+#### 查看详情
+
+#### 更改镜像信息
+
+#### 删除镜像
