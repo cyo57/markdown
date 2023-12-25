@@ -26,8 +26,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/linux-basic/进程管理.md",
-                "mode": "source",
+                "file": "python/PythonWebSpider.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -97,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.5,
-    "collapsed": true
+    "width": 293.5
   },
   "right": {
     "id": "dd3a41121b178f8a",
@@ -114,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/linux-basic/进程管理.md",
+                "file": "python/PythonWebSpider.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/linux-basic/进程管理.md",
+                "file": "python/PythonWebSpider.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/linux-basic/进程管理.md"
+                "file": "python/PythonWebSpider.md"
               }
             }
           }
@@ -177,8 +176,8 @@
   },
   "active": "562f725561782327",
   "lastOpenFiles": [
-    "linux/linux-basic/权限.md",
     "linux/linux-basic/进程管理.md",
+    "linux/linux-basic/权限.md",
     "linux/linux-basic/磁盘和分区.md",
     "linux/linux-basic/路径与目录.md",
     "linux/docker/2. 安装.md",
