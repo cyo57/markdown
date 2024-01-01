@@ -4,50 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "5f1e831441c3036d",
+        "id": "e1624a9e7ad3e473",
         "type": "tabs",
         "children": [
           {
-            "id": "cbf3c6031cf677c2",
+            "id": "a5467d85731332f1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/linux-basic/磁盘和分区.md",
+                "file": "python/python100days/day9 - 面向对象进阶.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "562f725561782327",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "python/PythonWebSpider.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1fb84c18095dadd3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/linux-basic/权限.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.5
+    "width": 293.5,
+    "collapsed": true
   },
   "right": {
     "id": "dd3a41121b178f8a",
@@ -113,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "python/PythonWebSpider.md",
+                "file": "python/python100days/day9 - 面向对象进阶.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/PythonWebSpider.md",
+                "file": "python/python100days/day9 - 面向对象进阶.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "python/PythonWebSpider.md"
+                "file": "python/python100days/day9 - 面向对象进阶.md"
               }
             }
           }
@@ -162,7 +136,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 237.5
+    "width": 237.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -174,10 +149,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "562f725561782327",
+  "active": "a5467d85731332f1",
   "lastOpenFiles": [
-    "linux/linux-basic/进程管理.md",
+    "python/python100days/day8 - 面向对象.md",
+    "python/python100days/day9 - 面向对象进阶.md",
+    "python/100days.md",
+    "python/python100days",
     "linux/linux-basic/权限.md",
+    "python/未命名.canvas",
+    "python/PythonWebSpider.md",
+    "linux/linux-basic/进程管理.md",
     "linux/linux-basic/磁盘和分区.md",
     "linux/linux-basic/路径与目录.md",
     "linux/docker/2. 安装.md",
