@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "python/python100days/day9 - 面向对象进阶.md",
+                "file": "math/宋浩错题本.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -70,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.5,
-    "collapsed": true
+    "width": 293.5
   },
   "right": {
     "id": "dd3a41121b178f8a",
@@ -87,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "python/python100days/day9 - 面向对象进阶.md",
+                "file": "math/宋浩错题本.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "python/python100days/day9 - 面向对象进阶.md",
+                "file": "math/宋浩错题本.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "python/python100days/day9 - 面向对象进阶.md"
+                "file": "math/宋浩错题本.md"
               }
             }
           }
@@ -136,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 237.5,
-    "collapsed": true
+    "width": 304.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -151,38 +149,41 @@
   },
   "active": "a5467d85731332f1",
   "lastOpenFiles": [
-    "python/python100days/day8 - 面向对象.md",
-    "python/python100days/day9 - 面向对象进阶.md",
-    "python/100days.md",
-    "python/python100days",
-    "linux/linux-basic/权限.md",
-    "python/未命名.canvas",
-    "python/PythonWebSpider.md",
+    "linux/openstack/OpenStack-Install-Doc.md",
+    "math/高等数学.md",
+    "math/宋浩错题本.md",
+    "linux/linux-basic/管道和重定向.md",
     "linux/linux-basic/进程管理.md",
     "linux/linux-basic/磁盘和分区.md",
-    "linux/linux-basic/路径与目录.md",
+    "linux/linux-basic/权限管理.md",
+    "linux/linux-basic/web-apache.md",
+    "linux/linux-basic/linux-basic-review.md",
+    "linux/linux-basic/linux-basic.md",
+    "linux/linux-basic/FTP 服务.md",
     "linux/docker/2. 安装.md",
+    "linux/linux-basic/路径与目录.md",
+    "python/python100days/day8 - 面向对象.md",
+    "python/python100days/day9 - 面向对象进阶.md",
+    "python/maps.md",
+    "python/PythonWebSpider.md",
+    "python/python123.md",
+    "python/PySide6.md",
+    "python/FluentPython.md",
+    "python/100days.md",
+    "python/python100days",
+    "python/未命名.canvas",
     "linux/docker/1. 介绍.md",
     "box/geek.md",
     "linux/docker",
-    "linux/openstack/OpenStack-Install-Doc.md",
     "linux/openstack/OpenStack 搭建流程.canvas",
-    "linux/linux-basic/linux-basic-review.md",
-    "linux/linux-basic/web 服务.md",
-    "linux/linux-basic/FTP 服务.md",
     "linux/linux-basic/WEB 服务.md",
     "linux/linux-basic/assets/12979420-8912851ab578a754.webp",
     "linux/linux-basic/assets/Pasted image 20231207172738.png",
-    "linux/linux-basic/linux-basic.md",
     "linux/linux-basic/assets/pe_vg.gif",
     "raid5.gif.md",
     "linux/cloud-computing.md",
-    "README.md",
     "未命名 1.canvas",
     "raid5.gif",
-    "2023-12-06.md",
-    "2023-12-05.md",
-    "cad/JianZhuGongCheng.md",
     "linux/openstack"
   ]
 }
