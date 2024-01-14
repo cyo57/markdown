@@ -53,7 +53,8 @@ $TTL 1D
                                         1H      ; retry
                                         1W      ; expire
                                         3H )    ; minimum
-        NS      www.aaa.com.
+        NS      aaa.com.
+	    A       127.0.0.1
 www     A       192.168.200.129
 ```
 
