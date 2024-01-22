@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"d83a8d4929dad851","type":"text","text":"Operating System","x":-162,"y":-76,"width":426,"height":65},
+		{"id":"ca443b9c966ede09","type":"text","text":"Hypervisor","x":-162,"y":-141,"width":426,"height":65},
+		{"id":"89e60b021429572c","type":"text","text":"GuestOS","x":-162,"y":-260,"width":142,"height":119},
+		{"id":"8ea588c716cba277","type":"text","text":"GuestOS","x":-20,"y":-260,"width":142,"height":119},
+		{"id":"93c730a6f8c3f94d","type":"text","text":"GuestOS","x":122,"y":-260,"width":142,"height":119},
+		{"id":"68e468dac2e06fc5","type":"text","text":"Operating System","x":324,"y":-76,"width":426,"height":65},
+		{"id":"24ba89c632d9823f","x":-162,"y":-320,"width":142,"height":60,"type":"text","text":"Bins/Libs"},
+		{"id":"37ee676f8ca430ca","type":"text","text":"Bins/Libs","x":-20,"y":-320,"width":142,"height":60},
+		{"id":"e8c378eff52d7fbd","type":"text","text":"Bins/Libs","x":122,"y":-320,"width":142,"height":60},
+		{"id":"654a46e793e4ea93","x":-162,"y":-380,"width":142,"height":60,"type":"text","text":"App"},
+		{"id":"459d1f8a179360c5","type":"text","text":"App","x":-20,"y":-380,"width":142,"height":60},
+		{"id":"ec2a446321063d6b","type":"text","text":"App","x":122,"y":-380,"width":142,"height":60},
+		{"id":"ae1456d537decc3f","type":"text","text":"Docker","x":324,"y":-141,"width":426,"height":65},
+		{"id":"7cfe33dfca029ac1","type":"text","text":"Bins/Libs","x":324,"y":-201,"width":142,"height":60},
+		{"id":"a8aadda9889ff9ae","type":"text","text":"App","x":466,"y":-261,"width":142,"height":60},
+		{"id":"11e40eefbdd48a57","type":"text","text":"Bins/Libs","x":466,"y":-201,"width":142,"height":60},
+		{"id":"e76eb9e93fe12996","type":"text","text":"App","x":608,"y":-261,"width":142,"height":60},
+		{"id":"1399585f36b76e63","type":"text","text":"Bins/Libs","x":608,"y":-201,"width":142,"height":60},
+		{"id":"8e24054e292357ac","type":"text","text":"App","x":324,"y":-261,"width":142,"height":60}
+	],
+	"edges":[]
+}
