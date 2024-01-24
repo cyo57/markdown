@@ -9,7 +9,7 @@ isaa.iso
 
 ```bash
 # 修改网卡配置
-[root@controller ~]# /etc/sysconfig/network-script/ifcfg-ensxx
+[root@controller ~]# /etc/sysconfig/ifcfg-ensxx
 
 
 # 修改主机名和hosts (修改第一网卡host only 即可)
