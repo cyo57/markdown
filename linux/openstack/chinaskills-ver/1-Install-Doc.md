@@ -2,24 +2,25 @@
 
 ## 准备工作
 
-### Controller
+### Controller&Compute
 
 硬盘 * 1
 isaa.iso
 
 ```bash
-# 修改网卡配置
-[root@controller ~]# /etc/sysconfig/ifcfg-ensxx
+# 修改网卡配置并重启服务 (修改第一网卡,即host only 即可)
+[root@controller ~]# /etc/sysconfig/network-script/ifcfg-XXX
+[root@controller ~]# systemctl restart network
 
 
-# 修改主机名和hosts (修改第一网卡host only 即可)
+# 修改主机名和hosts
 [root@controller ~]# hostnamectl set-hostname xxx
 [root@controller ~]# vi /etc/hosts
 
 
 # 关闭防火墙和SELinux
 [root@controller ~]# vi /etc/selinux/config
-[root@controller ~]# systemctl disable firewalld
+[root@controller ~]# systemctl disable --now firewalld
 
 
 # 配置yum local源
@@ -43,7 +44,6 @@ isaa.iso
 # 修改 openstack 环境变量配置
 [root@controller ~]# vim /etc/openstack/openrc.sh
 	# 使用正则表达式 %s/str1/str2/g 批量替换
-	
 
 # 拷贝出 compute 节点并为其添加硬盘，修改网卡、主机名配置
 
@@ -67,11 +67,11 @@ isaa.iso
 
 | name           | value            |
 | -------------- | ---------------- |
-| INTERFACE_IP   | **对应节点**的IP |
+| INTERFACE_IP   | 外部网卡 |
 | INTERFACE_NAME | 外部网卡名       |
-| BLOCK_DISK     | sdb1             |
-| OBJECT_DISK    | sdb2             |
-| SHARE_DISK     | sdb3             |
+| BLOCK_DISK     | sdb             |
+| OBJECT_DISK    | sdc             |
+| SHARE_DISK     | sdd             |
 
 - Compute 节点
 
