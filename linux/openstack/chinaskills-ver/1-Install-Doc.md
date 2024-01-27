@@ -98,12 +98,12 @@ iaas-install-mysql.sh # 数据库
 iaas-install-keystone.sh # 验证
 iaas-install-glance.sh # 镜像管理
 iaas-install-placement.sh # 管理和分配云计算资源
-iaas-install-nova-controller.sh # 虚拟机创建、调度
+iaas-install-nova-controller.sh # 虚拟机创建、调度（依赖于glance, placement）
 iaas-install-neutron-controller.sh # 网络服务
 iaas-install-dashboard.sh # 面板
 
 # 高级服务
-iaas-install-cinder-controller.sh # 块模块
+iaas-install-cinder-controller.sh # 块模块（依赖于glance）
 iaas-install-swift-controller.sh # 对象存储模块
 ```
 
@@ -250,8 +250,17 @@ openstack floating ip list
 openstack server add floating ip centos7.9-kang 192.168.200.111
 ```
 
+## 将控制节点资源作为计算节点
 
-## 配置模块
+- 修改 openrc.sh
+> 把compute节点的IP和主机名改为controller节点的IP和主机名，并安装服务
+
+```bash
+vim /etc/openstack/openrc.sh
+iaas-install-nova-compute.sh
+```
+
+## 模块配置
 
 ### neutron
 
