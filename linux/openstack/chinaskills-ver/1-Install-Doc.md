@@ -185,8 +185,8 @@ openstack network list
 
 # 创建内网 和 内网子网
 openstack network create <int-name>
-openstack subnet create \
---network int-kang1 int-kang1-sub \
+openstack subnet create int-kang1-sub \
+--network int-kang1 \
 --subnet-range 10.2.2.0/24 \
 --gateway 10.2.2.1 \
 --allocation-pool start=10.2.2.10,end=10.2.2.100 \
@@ -213,29 +213,28 @@ openstack server add port cirros-test \
 
 #### 上传镜像
 ```bash
-openstack image create \
+openstack image create <name> \
 --disk-format qcow2 \
 --container-format bare \
 --public \
---file /path/to/image \
-<name>
+--file /path/to/image
 ```
 
 #### 创建实例类型
 
 ```bash
 openstack flavor list # 创建实例类型
- openstack flavor create flavor-kang1 \ # 名称
- --ram 2048 \ # 内存大小MB
- --disk 50 \ # 磁盘大小GB
- --vcpus 2 # cpu内核
+openstack flavor create <name> \ # 名称
+--ram 2048 \ # 内存大小MB
+--disk 50 \ # 磁盘大小GB
+--vcpus 2 # cpu内核
 ```
 
 #### 创建实例
 
 ```bash
 openstack server create \
---image centos7.9 \ # 镜像
+--image <image> \ # 镜像
 --flavor flavor-kang1 \ # 实例类型
 --network int-kang1 \ # 网络
 centos7.9-kang # 名称
