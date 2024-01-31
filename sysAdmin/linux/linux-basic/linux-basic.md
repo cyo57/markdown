@@ -167,7 +167,7 @@ shift + pgup/dn 翻页
 文件系统一开始就将 inode 和 block 规划好了，除非重新格式化，否则 inode 和 block 就不再变动。
 Ext2 中假设某个文件的属性与权限在 inode4 ，而这个 inode 记录了文件数据的实际放置点
 
-![inode/block 数据存取示意图](./assets/linux-basic/filesystem-1-1700483198515-6.jpg)
+![inode/block 数据存取示意图](filesystem-1-1700483198515-6.jpg)
 
 inode 记录的文件数据至少有：
 
@@ -224,7 +224,7 @@ cat /proc/filesystems
 
 #### Linux VFS
 
-![VFS 文件系统的示意图](./assets/linux-basic/centos7_vfs-1700483125456-3-1700483222300-9.gif)
+![VFS 文件系统的示意图](centos7_vfs-1700483125456-3-1700483222300-9.gif)
 
 #### XFS 文件系统he
 
@@ -253,7 +253,7 @@ heExt 文件系统采用的是预先规划出所有的 inodhee/block/meta data�
 
 Linux 下的链接文件有两种，一种是类似于 Windows 快捷方式的文件，另一种是通过文件系统 inode 链接来产生新文件名，而不是新文件。
 
-![实体链接的文件读取示意图](./assets/linux-basic/hard_link1-1700487068474-13.gif)
+![实体链接的文件读取示意图](hard_link1-1700487068474-13.gif)
 
 - Hard Link
 
@@ -264,7 +264,7 @@ Linux 下的链接文件有两种，一种是类似于 Windows 快捷方式的�
 
 和 Windows 快捷方式类似
 
-![symbolic_link1](./assets/linux-basic/symbolic_link1-1700487223070-18-1700487225105-20-1700487226461-22-1700487227824-24.gif)
+![symbolic_link1](symbolic_link1-1700487223070-18-1700487225105-20-1700487226461-22-1700487227824-24.gif)
 
 > [root@study ~]# ln [-sf] 来源文件 目标文件
 > 选项与参数：
