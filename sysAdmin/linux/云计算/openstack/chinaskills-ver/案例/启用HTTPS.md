@@ -51,3 +51,4 @@ systemctl restart httpd
 systemctl restart memcached
 ```
 
+- 通过 https 访问 dashboard
