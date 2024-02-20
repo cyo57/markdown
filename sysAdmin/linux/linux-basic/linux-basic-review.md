@@ -1,3 +1,7 @@
+---
+tags:
+  - linux
+---
 # Linux-basic-review
 
 ## Linux 是什么

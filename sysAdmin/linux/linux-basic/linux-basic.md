@@ -1,3 +1,7 @@
+---
+tags:
+  - linux
+---
 # Linux-Basic
 
 ## 安装Linux distribution
