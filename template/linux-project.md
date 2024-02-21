@@ -14,7 +14,7 @@ tags:
 - 配置YUM
 - 安装软件包
 ```bash
-vim net-tools bash-completion wget lrzsz
+yum install -y vim net-tools bash-completion
 ```
 
 ### Step1
