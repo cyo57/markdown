@@ -179,6 +179,9 @@ openstack subnet list
 
 #### 创建网络、子网、路由器
 
+> [!tips]
+> 创建外网需要参数 --external，内网则不需要
+
 ```bash
 # 查看网络列表
 openstack network list
