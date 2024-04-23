@@ -101,10 +101,12 @@ iaas-install-placement.sh # 管理和分配云计算资源
 iaas-install-nova-controller.sh # 虚拟机创建、调度（依赖于glance, placement）
 iaas-install-neutron-controller.sh # 网络服务
 iaas-install-dashboard.sh # 面板
+echo ws
 
 # 高级服务
 iaas-install-cinder-controller.sh # 块模块（依赖于glance）
 iaas-install-swift-controller.sh # 对象存储模块
+echo ws
 ```
 
 - Compute 节点
@@ -112,6 +114,7 @@ iaas-install-swift-controller.sh # 对象存储模块
 ```bash
 iaas-install-nova-compute.sh
 iaas-install-neutron-compute.sh
+echo ws
 
 # 高级服务
 iaas-install-cinder-compute.sh
