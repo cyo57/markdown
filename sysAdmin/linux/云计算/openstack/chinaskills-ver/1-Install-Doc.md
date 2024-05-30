@@ -26,30 +26,28 @@ isaa.iso
 # 配置yum local源
 [root@controller ~]# vi /etc/yum.repos.d/xxx.repo
 
-    [centos]
-    name = centos
-    baseurl=file:///opt/centos
-    gpgcheck=0
-    enabled=1
-    [iaas] # 同理
+[centos]
+name=centos
+baseurl=file:///opt/centos
+gpgcheck=0
+enabled=1
+[iaas] # 同理
 
 #配置完成后清空yum缓存并检查
 [root@controller ~]# yum clean all & yum repolist
 
-
 # 安装常用软件（双节点）
 [root@controller ~]# yum install vim bash-completion openstack-iaas
 
-
 # 修改 openstack 环境变量配置
 [root@controller ~]# vim /etc/openstack/openrc.sh
-	# 使用正则表达式 %s/str1/str2/g 批量替换
+# 使用正则表达式 %s/str1/str2/g 批量替换
 
 # 拷贝出 compute 节点并为其添加硬盘，修改网卡、主机名配置
 
 
 # 配置ftp服务 作为compute节点yum源（可选）
-	# baseurl=ftp://controller/centos
+# baseurl=ftp://controller/centos
 [root@controller ~]# yum install vsftpd
 [root@controller ~]# echo "anon_root=/opt" >> /etc/vsftpd/vsftpd.conf
 [root@controller ~]# systemctl enabled --now vsftpd
@@ -57,9 +55,9 @@ isaa.iso
 
 
 
-## 部署 issa
+## 部署 iaas
 
-确保双节点都安装了 `openstack-issa`
+确保双节点都安装了 `openstack-iaas`
 
 - Controller 节点
 
