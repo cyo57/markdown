@@ -4,16 +4,36 @@
     "type": "split",
     "children": [
       {
-        "id": "52e70349d87d4aa6",
+        "id": "1fc7544fe63dadb3",
         "type": "tabs",
         "children": [
           {
-            "id": "a0cabce5b8f45461",
+            "id": "1967784aca16a87f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "5e1291f00e346950",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/git/0. 代理配置.md",
+                "file": "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b513653e7aacc73e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "programming/web/HTTP.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "http",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "80ed98c9c6bd8439",
@@ -86,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sysAdmin/git/0. 代理配置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +123,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sysAdmin/git/0. 代理配置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,17 +144,15 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "sysAdmin/git/0. 代理配置.md"
-              }
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,8 +165,27 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "6cb238e797109859",
+  "active": "1967784aca16a87f",
   "lastOpenFiles": [
-    "notes/interesting-finds/interesting.md"
+    "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
+    "programming/web/network-principle.md",
+    "programming/web/HTTP.md",
+    "design/cad/JianZhuGongCheng.md",
+    "design/cad/JianZhuGongCheng_tips.md",
+    "design/cad/CAD_Specification.md",
+    "design/cad/CAD Noob.md",
+    "design/cad/211013_bk.md",
+    "other/box/geek.md",
+    "notes/interesting-finds/interesting.md",
+    "notes/reading-notes/爱的艺术.md",
+    "notes/psychology-notes/恋爱.md",
+    "notes/ztNotes/GPS.md",
+    "notes/ztNotes/单招报名.md",
+    "notes/reading-notes/风沙星辰.md",
+    "programming/vue3/1. Vue 介绍.md",
+    "programming/vue3/1.1 HelloWorld.md",
+    "sysAdmin/kubernetess/1.1 安装K8S v2.md",
+    "programming/vue3",
+    "sysAdmin/git/0. 代理配置.md"
   ]
 }

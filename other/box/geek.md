@@ -64,7 +64,7 @@
 
 - 微软官方背书的启动项管理
 
-#### Men Reduct 3.4 - [Official News](https://www.henrypp.org/)
+#### Mem Reduct 3.4 - [Official News](https://www.henrypp.org/)
 
 - 释放你的RAM
 

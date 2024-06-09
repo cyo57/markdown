@@ -1,3 +1,7 @@
+---
+tags:
+  - web
+---
 # HTTP
 
 webservice = http + XML; Rest = http + json;
