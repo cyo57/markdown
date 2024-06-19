@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#LVM",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -152,7 +152,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,7 +168,11 @@
   },
   "active": "1967784aca16a87f",
   "lastOpenFiles": [
+    "sysAdmin/linux/linux-basic/磁盘和分区.md",
+    "template/reading-notes.md",
     "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
+    "design/adobe/Hello AE.md",
+    "sysAdmin/linux/linux-basic/管道和重定向.md",
     "programming/web/network-principle.md",
     "programming/web/HTTP.md",
     "design/cad/JianZhuGongCheng.md",
