@@ -1,3 +1,8 @@
+---
+tags:
+  - mariadb
+  - database
+---
 # SQL
 
 ## 关系数据库概述

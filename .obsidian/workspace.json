@@ -4,42 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "1fc7544fe63dadb3",
+        "id": "1b13ff89b52b41a9",
         "type": "tabs",
         "children": [
           {
-            "id": "1967784aca16a87f",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
-            "id": "5e1291f00e346950",
+            "id": "7680ae61ff89edd8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
+                "file": "sysAdmin/linux/云计算/openstack/chinaskills-ver/1-Install-Doc.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b513653e7aacc73e",
+            "id": "769cbff488bccdf9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "programming/web/HTTP.md",
+                "file": "sysAdmin/docker/1. 介绍和安装.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -68,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#LVM",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,13 +78,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "80ed98c9c6bd8439",
@@ -107,6 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "sysAdmin/docker/1. 介绍和安装.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,6 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "sysAdmin/docker/1. 介绍和安装.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "sysAdmin/docker/1. 介绍和安装.md"
+              }
             }
           }
         ],
@@ -166,8 +161,12 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "1967784aca16a87f",
+  "active": "769cbff488bccdf9",
   "lastOpenFiles": [
+    "sysAdmin/linux/云计算/openstack/chinaskills-ver/1-Install-Doc.md",
+    "sysAdmin/linux/云计算/openstack/chinaskills-ver/0-个人踩坑记录.md",
+    "programming/database/mysql.md",
+    "programming/database/mariadb.md",
     "sysAdmin/linux/linux-basic/磁盘和分区.md",
     "template/reading-notes.md",
     "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
@@ -190,7 +189,6 @@
     "programming/vue3/1. Vue 介绍.md",
     "programming/vue3/1.1 HelloWorld.md",
     "sysAdmin/kubernetess/1.1 安装K8S v2.md",
-    "programming/vue3",
-    "sysAdmin/git/0. 代理配置.md"
+    "programming/vue3"
   ]
 }
