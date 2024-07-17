@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "1b13ff89b52b41a9",
+        "id": "25fe811c645f97e0",
         "type": "tabs",
         "children": [
           {
-            "id": "7680ae61ff89edd8",
+            "id": "12350cd72e1b5226",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/linux/云计算/openstack/chinaskills-ver/1-Install-Doc.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "769cbff488bccdf9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sysAdmin/docker/1. 介绍和安装.md",
+                "file": "sysAdmin/docker/6. DockerFile.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "inspect",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sysAdmin/docker/1. 介绍和安装.md",
+                "file": "sysAdmin/docker/6. DockerFile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sysAdmin/docker/1. 介绍和安装.md",
+                "file": "sysAdmin/docker/6. DockerFile.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sysAdmin/docker/1. 介绍和安装.md"
+                "file": "sysAdmin/docker/6. DockerFile.md"
               }
             }
           }
@@ -147,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -161,34 +147,41 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "769cbff488bccdf9",
+  "active": "12350cd72e1b5226",
   "lastOpenFiles": [
-    "sysAdmin/linux/云计算/openstack/chinaskills-ver/1-Install-Doc.md",
-    "sysAdmin/linux/云计算/openstack/chinaskills-ver/0-个人踩坑记录.md",
+    "sysAdmin/docker/9. Docker-compose.md",
+    "sysAdmin/docker/8. Docker 网络.md",
     "programming/database/mysql.md",
+    "programming/sqlite3/2. 数据库操作.md",
+    "programming/sqlite3/1. SQLite 语法和数据类型.md",
+    "programming/sqlite3/0. 介绍和安装.md",
     "programming/database/mariadb.md",
-    "sysAdmin/linux/linux-basic/磁盘和分区.md",
-    "template/reading-notes.md",
-    "sysAdmin/linux/云计算/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
-    "design/adobe/Hello AE.md",
-    "sysAdmin/linux/linux-basic/管道和重定向.md",
-    "programming/web/network-principle.md",
-    "programming/web/HTTP.md",
-    "design/cad/JianZhuGongCheng.md",
-    "design/cad/JianZhuGongCheng_tips.md",
-    "design/cad/CAD_Specification.md",
-    "design/cad/CAD Noob.md",
-    "design/cad/211013_bk.md",
+    "sysAdmin/docker/2. 常用命令.md",
     "other/box/geek.md",
     "notes/interesting-finds/interesting.md",
-    "notes/reading-notes/爱的艺术.md",
-    "notes/psychology-notes/恋爱.md",
-    "notes/ztNotes/GPS.md",
-    "notes/ztNotes/单招报名.md",
-    "notes/reading-notes/风沙星辰.md",
-    "programming/vue3/1. Vue 介绍.md",
-    "programming/vue3/1.1 HelloWorld.md",
-    "sysAdmin/kubernetess/1.1 安装K8S v2.md",
+    "sysAdmin/docker/1. 介绍和安装.md",
+    "sysAdmin/docker/assets/Pasted image 20240711203441.png",
+    "sysAdmin/docker/assets/Pasted image 20240710111625.png",
+    "sysAdmin/docker/assets/Pasted image 20240710110429.png",
+    "sysAdmin/docker/6. DockerFile.md",
+    "sysAdmin/docker/7. Docker 微服务.md",
+    "sysAdmin/docker/assets/Pasted image 20240708145828.png",
+    "sysAdmin/docker/assets/Pasted image 20240708145823.png",
+    "sysAdmin/docker/assets",
+    "sysAdmin/openstack/chinaskills-ver/1-Install-Doc.md",
+    "sysAdmin/docker/5. 常规安装和复杂安装.md",
+    "sysAdmin/docker/3. 镜像发布.md",
+    "sysAdmin/docker/canvas/虚拟机与Docker对比.canvas",
+    "sysAdmin/docker/4. 容器数据卷.md",
+    "sysAdmin/docker/10. Portainer.md",
+    "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
+    "sysAdmin/linux/linux-basic/磁盘和分区.md",
+    "template/reading-notes.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/手动迁移虚拟机.md",
+    "design/adobe/Hello AE.md",
+    "sysAdmin/linux/linux-basic/管道和重定向.md",
+    "programming/h5/network-principle.md",
+    "programming/h5/HTTP.md",
     "programming/vue3"
   ]
 }
