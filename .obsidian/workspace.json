@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md",
+                "file": "sysAdmin/docker/Ext1. CIG.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md",
+                "file": "sysAdmin/docker/Ext1. CIG.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md",
+                "file": "sysAdmin/docker/Ext1. CIG.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md"
+                "file": "sysAdmin/docker/Ext1. CIG.md"
               }
             }
           }
@@ -147,10 +147,14 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "12350cd72e1b5226",
+  "active": "739f6df530411416",
   "lastOpenFiles": [
-    "sysAdmin/docker/9. Docker-compose.md",
+    "sysAdmin/docker/10. Portainer.md",
+    "sysAdmin/docker/Ext1. CIG.md",
     "sysAdmin/docker/8. Docker 网络.md",
+    "sysAdmin/docker/7. Docker 微服务.md",
+    "sysAdmin/docker/9. Docker-compose.md",
+    "sysAdmin/docker/6. DockerFile.md",
     "programming/database/mysql.md",
     "programming/sqlite3/2. 数据库操作.md",
     "programming/sqlite3/1. SQLite 语法和数据类型.md",
@@ -163,8 +167,6 @@
     "sysAdmin/docker/assets/Pasted image 20240711203441.png",
     "sysAdmin/docker/assets/Pasted image 20240710111625.png",
     "sysAdmin/docker/assets/Pasted image 20240710110429.png",
-    "sysAdmin/docker/6. DockerFile.md",
-    "sysAdmin/docker/7. Docker 微服务.md",
     "sysAdmin/docker/assets/Pasted image 20240708145828.png",
     "sysAdmin/docker/assets/Pasted image 20240708145823.png",
     "sysAdmin/docker/assets",
@@ -173,7 +175,6 @@
     "sysAdmin/docker/3. 镜像发布.md",
     "sysAdmin/docker/canvas/虚拟机与Docker对比.canvas",
     "sysAdmin/docker/4. 容器数据卷.md",
-    "sysAdmin/docker/10. Portainer.md",
     "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
     "sysAdmin/linux/linux-basic/磁盘和分区.md",
     "template/reading-notes.md",
@@ -181,7 +182,6 @@
     "design/adobe/Hello AE.md",
     "sysAdmin/linux/linux-basic/管道和重定向.md",
     "programming/h5/network-principle.md",
-    "programming/h5/HTTP.md",
     "programming/vue3"
   ]
 }
