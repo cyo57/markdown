@@ -54,7 +54,7 @@ touch install_openstack.yaml
 
 ### Playbook
 
-在编写playbook前，需要做一些基础工作，将chinaskills_cloud_iaas.iso和centos7.iso上传到ansible并挂在为ftp源以供其他节点访问，配置可参考[[1-Install-Doc]]
+在编写playbook前，需要做一些基础工作，将chinaskills_cloud_iaas.iso和centos7.iso上传到ansible并挂在为ftp源以供其他节点访问，配置可参考[[old.1-Install-Doc]]
 ```bash
 [root@ansible ~]# yum install -y vsftpd
 # [root@ansible ~]# vim /etc/vsftpd/vsftpd.conf

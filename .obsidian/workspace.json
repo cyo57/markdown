@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
+                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "db824a8e24846279",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "git proxy",
+                "query": "openstack",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
+                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
+                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md"
+                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md"
               }
             }
           }
@@ -147,19 +160,27 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0ab35ccac12d6648",
+  "active": "db824a8e24846279",
   "lastOpenFiles": [
+    "sysAdmin/openstack/chinaskills-ver/2. OpenStack CLI 基本操作.md",
+    "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
+    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
+    "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
+    "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
+    "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
+    "sysAdmin/openstack/chinaskills-ver/案例/未命名.md",
+    "sysAdmin/linux/linux-basic/管道和重定向.md",
+    "notes/hcia/openEuler.md",
+    "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
+    "notes/hcia",
     "sysAdmin/kubernetess/0.1 学习规划.md",
     "sysAdmin/kubernetess/0.2 k8s 基础概念.md",
-    "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
     "sysAdmin/kubernetess/geekhour",
     "sysAdmin/DevOpsPipeline/Github Actions.md",
     "notes/interesting-finds/interesting.md",
-    "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
     "design/cad/CAD Noob.md",
     "sysAdmin/kubernetess/1.1.2 KubeKey 部署.md",
     "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
-    "sysAdmin/openstack/chinaskills-ver/1-Install-Doc.md",
     "sysAdmin/git/0. 代理配置.md",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105920.png",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105834.png",
@@ -177,19 +198,12 @@
     "sysAdmin/docker/9. Docker-compose.md",
     "sysAdmin/docker/6. DockerFile.md",
     "programming/database/mysql.md",
-    "programming/sqlite3/2. 数据库操作.md",
-    "programming/sqlite3/1. SQLite 语法和数据类型.md",
-    "programming/sqlite3/0. 介绍和安装.md",
-    "programming/database/mariadb.md",
-    "other/box/geek.md",
-    "sysAdmin/docker/1. 介绍和安装.md",
     "sysAdmin/docker/assets/Pasted image 20240711203441.png",
     "sysAdmin/docker/assets/Pasted image 20240710111625.png",
     "sysAdmin/docker/assets/Pasted image 20240710110429.png",
     "sysAdmin/docker/assets/Pasted image 20240708145828.png",
     "sysAdmin/docker/assets/Pasted image 20240708145823.png",
     "sysAdmin/docker/assets",
-    "sysAdmin/docker/5. 常规安装和复杂安装.md",
     "sysAdmin/docker/canvas/虚拟机与Docker对比.canvas",
     "programming/vue3"
   ]
