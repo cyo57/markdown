@@ -1,12 +1,19 @@
+---
+tags:
+  - openstack
+---
 # OpenStack Install Doc
 
 ## 准备工作
 
-### Controller&Compute
+### Controller 节点
 
-硬盘 * 1
-isaa.iso
+> [!tip]
+> ### 前置准备
+> - 两张网卡
+> - 系统 CentOS 7
 
+- 配置系统基础环境
 ```bash
 # 修改网卡配置并重启服务 (修改第一网卡,即host only 即可)
 [root@controller ~]# /etc/sysconfig/network-script/ifcfg-XXX
@@ -21,10 +28,13 @@ isaa.iso
 # 关闭防火墙和SELinux
 [root@controller ~]# vi /etc/selinux/config
 [root@controller ~]# systemctl disable --now firewalld
+```
 
+此时通过VMWare插入光盘
 
+```shell
 # 配置yum local源
-[root@controller ~]# vi /etc/yum.repos.d/xxx.repo
+[root@controller ~]# vi /etc/yum.repos.d/local.repo
 
 [centos]
 name=centos
@@ -44,7 +54,6 @@ enabled=1
 # 使用正则表达式 %s/str1/str2/g 批量替换
 
 # 拷贝出 compute 节点并为其添加硬盘，修改网卡、主机名配置
-
 
 # 配置ftp服务 作为compute节点yum源（可选）
 # baseurl=ftp://controller/centos
