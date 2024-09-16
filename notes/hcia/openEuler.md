@@ -30,9 +30,19 @@ openEuler系统中，仅能使用route命令对系统中的路由表进行管理
 - True
 
 openEuler 版本发布
+- 2019发布
 - LTS - 4year
 - community - 6month
 
 以下哪条命令可以查看文件/etc/passwd来自于哪个软件包?
 - a
 
+以下可以进行进程绑核的工具是哪一项？
+- numactl
+
+关于命令docker Commit -a “huawei.com" -m "redis images" f4603f1f918at arm64v8/centos:7，以下哪项描述是错误的
+- 该命令功能是根据镜像ID创建一个新的镜像
+> 根据**容器**ID创建
+
+在OpenEuler中，timedatect命令修改日期格式正确的是?
+- YYYY-mm-DD
