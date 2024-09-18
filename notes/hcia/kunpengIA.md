@@ -14,3 +14,13 @@ C/C++语言中的char数据类型在x86与鲲鹏处理器下完全一致。
 
 关于numastat命令的回显信息描述中，错误的是哪一项？
 - node指的是CPUcore
+
+## 多选
+
+![image.png](https://proxy.mistudio.top/https://raw.githubusercontent.com/cyo57/image-host/main/20240916232417.png)
+
+![image.png](https://proxy.mistudio.top/https://raw.githubusercontent.com/cyo57/image-host/main/20240916232535.png)
+
+![image.png](https://proxy.mistudio.top/https://raw.githubusercontent.com/cyo57/image-host/main/20240916235502.png)
+
+![image.png](https://proxy.mistudio.top/https://raw.githubusercontent.com/cyo57/image-host/main/20240917010607.png)

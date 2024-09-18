@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0ab35ccac12d6648",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "db824a8e24846279",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 237.5
   },
   "right": {
     "id": "80ed98c9c6bd8439",
@@ -147,7 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 220.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -160,17 +147,23 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "db824a8e24846279",
+  "active": "739f6df530411416",
   "lastOpenFiles": [
+    "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
+    "sysAdmin/nginx/1. 安装.md",
+    "sysAdmin/linux/云计算/mariadb/主从加读写分离.md",
+    "notes/hcia/openEuler.md",
+    "notes/hcia/kunpengIA.md",
+    "sysAdmin/nginx/3. 配置文件.md",
+    "sysAdmin/nginx/未命名.canvas",
+    "sysAdmin/nginx/2. 静态站点部署.md",
+    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
     "sysAdmin/openstack/chinaskills-ver/2. OpenStack CLI 基本操作.md",
     "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
-    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
     "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
-    "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
     "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
     "sysAdmin/openstack/chinaskills-ver/案例/未命名.md",
     "sysAdmin/linux/linux-basic/管道和重定向.md",
-    "notes/hcia/openEuler.md",
     "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
     "notes/hcia",
     "sysAdmin/kubernetess/0.1 学习规划.md",
@@ -194,10 +187,6 @@
     "sysAdmin/DevOpsPipeline",
     "sysAdmin/docker/Ext1. CIG.md",
     "sysAdmin/docker/8. Docker 网络.md",
-    "sysAdmin/docker/7. Docker 微服务.md",
-    "sysAdmin/docker/9. Docker-compose.md",
-    "sysAdmin/docker/6. DockerFile.md",
-    "programming/database/mysql.md",
     "sysAdmin/docker/assets/Pasted image 20240711203441.png",
     "sysAdmin/docker/assets/Pasted image 20240710111625.png",
     "sysAdmin/docker/assets/Pasted image 20240710110429.png",
