@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
+                "file": "notes/hcia/openEuler.md",
                 "mode": "source",
                 "source": false
               }
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "openstack",
+                "query": "上传镜像",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
+                "file": "notes/hcia/openEuler.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
+                "file": "notes/hcia/openEuler.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md"
+                "file": "notes/hcia/openEuler.md"
               }
             }
           }
@@ -171,33 +171,36 @@
   },
   "active": "0ab35ccac12d6648",
   "lastOpenFiles": [
+    "notes/hcia/kunpengIA.md",
+    "notes/hcia/openEuler.md",
+    "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
+    "sysAdmin/openstack/manila.md",
+    "sysAdmin/openstack/cloudykitty.md",
+    "sysAdmin/openstack/cinder.md",
+    "sysAdmin/openstack/barbican.md",
+    "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
+    "sysAdmin/openstack/chinaskills-ver/2. OpenStack CLI 基本操作.md",
+    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/Openstack 参数调优.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/启用HTTPS.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/高可用数据库集群与负载均衡.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
+    "sysAdmin/openstack/chinaskills-ver/案例/单节点商场部署.md",
+    "sysAdmin/git/0. 代理配置.md",
+    "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
     "sysAdmin/kubernetess/1.1 通过 KubeAdmin 部署.md",
     "sysAdmin/kubernetess/0.3 k8s 组件.md",
     "sysAdmin/kubernetess/0.2 k8s 基础概念.md",
     "sysAdmin/kubernetess/res/components-of-kubernetes.svg",
     "sysAdmin/docker/1. 介绍和安装.md",
-    "notes/hcia/openEuler.md",
-    "notes/hcia/kunpengIA.md",
-    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
-    "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
-    "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
-    "sysAdmin/openstack/chinaskills-ver/2. OpenStack CLI 基本操作.md",
     "sysAdmin/nginx/3. 配置文件.md",
     "sysAdmin/nginx/2. 静态站点部署.md",
     "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
     "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
     "sysAdmin/openstack/chinaskills-ver/案例/未命名.md",
     "sysAdmin/linux/linux-basic/管道和重定向.md",
-    "sysAdmin/kubernetess/geekhour/0.1 搭建 K8S 环境.md",
     "notes/hcia",
-    "sysAdmin/kubernetess/0.1 学习规划.md",
     "sysAdmin/kubernetess/geekhour",
-    "sysAdmin/DevOpsPipeline/Github Actions.md",
-    "notes/interesting-finds/interesting.md",
-    "design/cad/CAD Noob.md",
-    "sysAdmin/kubernetess/1.1.2 KubeKey 部署.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
-    "sysAdmin/git/0. 代理配置.md",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105920.png",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105834.png",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105753.png",
@@ -205,8 +208,6 @@
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105053.png",
     "sysAdmin/DevOpsPipeline/assets",
     "sysAdmin/DevOpsPipeline/GithubActionsGlow.canvas",
-    "sysAdmin/docker/2. 常用命令.md",
-    "sysAdmin/docker/10. Portainer.md",
     "sysAdmin/DevOpsPipeline",
     "sysAdmin/docker/assets/Pasted image 20240711203441.png",
     "sysAdmin/docker/assets/Pasted image 20240710111625.png",

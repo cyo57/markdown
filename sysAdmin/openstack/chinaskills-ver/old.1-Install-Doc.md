@@ -227,10 +227,10 @@ openstack server add port cirros-test \
 #### 上传镜像
 ```bash
 openstack image create <name> \
---disk-format qcow2 \
---container-format bare \
---public \
---file /path/to/image
+	--disk-format qcow2 \
+	--container-format bare \
+	--public \
+	--file </path/to/image>
 ```
 
 #### 创建实例类型

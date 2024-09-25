@@ -4,11 +4,11 @@
 开源软件(open source software)的概念首次正式提出于
 - 1998.02
 
+开源软件的概念提出是在
+- 1998年2月3日
+
 在MBR分区方案中，主引I导程序占用的字节数是多少？
 - 446
-
-当sysvinit系统初始化的时候，它会将所有可能用到的后台服务进程全部启动运行。并且系统必须等待所有的服务都启动就绪之后，才允许用户登录。这种做法有两个缺点。首先是启动时间过长，其次是系统资源浪费。以下关于systemd的描述中，哪个选项可以弥补sysvinit的缺点?
-- a
 
 在openEuler 系统中定义了一个变量ORDER，并为其赋值为130，以下哪个命令中调用了该变量?
 - $ORDER
@@ -16,9 +16,6 @@
 
 首次正式提出开源软件(open source software)的概念的组织是
 - 开放源代码促进会(OpenSource Initiative，OSl)
-
-开源软件的概念提出是在
-- 1998年2月3日
 
 openEuler社区的开发活动是以下面哪种组织来开展的
 - SIG
@@ -35,7 +32,7 @@ openEuler 版本发布
 - community - 6month
 
 以下哪条命令可以查看文件/etc/passwd来自于哪个软件包?
-- a
+- rpm -qf /etc/passwd
 
 以下可以进行进程绑核的工具是哪一项？
 - numactl
@@ -57,3 +54,64 @@ openEuler 版本发布
 
 vim如何把35-45行之间的内容保存到b.txt
 - :35,45w b.txt
+
+## 填空
+
+find
+- find path -name pattarn
+- 注意 find 正确的参数只有一个 `-`
+
+find 查找30天以内的文件
+- find . -type f -mtime -30
+- mtime 修改过
+- atime 访问过
+- ctime 状态改变过
+
+find 查找30天以外的文件 并删除
+- find . -type f -mtime +30 -delete
+
+查看所有一次性任务 (at)
+- at -l
+
+parted 工具保存并退出
+- quit
+
+yum 更新全部软件包
+- yum updatedddd
+- 注意区别于 apt 和 apt-get
+
+通过源码安装软件的步骤
+- 配置、编译、安装
+
+创建目录下 metadata 和软件包的依赖
+- createrepo --database/software
+
+gpasswd 批量添加成员
+- gpasswd -M user1,user2 grouptttttt
+
+gpasswd 添加成员
+- gpasswd -a
+
+dnf 添加仓库源
+- dnf config-mamager URL
+
+systemd 查看运行中的服务
+- systemctl list-units --type service
+
+chage 查看用户过期时间
+- chage -l root
+
+Shell比较运算符
+- `-eq` : 等于
+- `-ne` : 不等于
+- `-gt` : 大于
+- `-lt` : 小于
+- `-ge` : 大于等于
+- `-le` : 小于等于
+
+dnf 查看包组包含的软件
+- dnf group info XXX
+
+usermod 迁移用户目录
+- usermod -md newpath user
+
