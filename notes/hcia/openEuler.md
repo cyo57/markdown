@@ -77,7 +77,7 @@ parted 工具保存并退出
 - quit
 
 yum 更新全部软件包
-- yum updatedddd
+- yum update
 - 注意区别于 apt 和 apt-get
 
 通过源码安装软件的步骤
