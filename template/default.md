@@ -1,6 +1,7 @@
 ---
 tags:
   - none
+date:
 ---
 > 2024-03-15
 > {{author}}

@@ -2,6 +2,8 @@
 tags:
   - mariadb
   - database
+  - mysql
+date: "241011"
 ---
 # SQL
 
@@ -126,7 +128,54 @@ Windows和Mac用户可以通过 https://dev.mysql.com/downloads/mysql/ 下载Com
 
 Debian和Ubuntu用户可以简单地通过命令`apt-get install mysql-server`
 
-#### 运行MySQL
+> [!tip]
+> Debian12 已经从官方仓库移除 mysql，可以使用 mariadb 代替
+
+#### 运行 MariaDB
+
+apt 安装完成后会自动为 MariaDB 设置 service 并立即运行
+
+验证安装成功
+```shell
+root@aliyun-sp:~# mysqladmin --version
+mysqladmin  Ver 9.1 Distrib 10.5.26-MariaDB, for debian-linux-gnu on x86_64
+```
+
+设置数据库密码
+```shell
+root@aliyun-sp:~# mysqladmin -u root password passwd000000;
+
+root@aliyun-sp:~# mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+```
+
+### 基础管理
+
+创建新用户帐户
+```sql
+MariaDB [(none)]> CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'passwd000000';
+Query OK, 0 rows affected (0.002 sec)
+```
+
+设置权限
+```sql
+CREATE DATABASE mydatabase;
+USE mydatabase;
+
+CREATE TABLE exampletable (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON database TO 'testuser'@'localhost';
+```
 
 
+配置文件 /etc/mysql/my.cnf
+选择是否开放远程访问
+```shell
+[mysqld]
 
+```

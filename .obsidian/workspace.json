@@ -13,29 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/hcia/openEuler.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0fd2bd40ba691aae",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "sysAdmin/kubernetess/res/components-of-kubernetes.svg"
-              }
-            }
-          },
-          {
-            "id": "db824a8e24846279",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
+                "file": "programming/database/mariadb.md",
                 "mode": "source",
                 "source": false
               }
@@ -70,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "上传镜像",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/hcia/openEuler.md",
+                "file": "programming/database/mariadb.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/hcia/openEuler.md",
+                "file": "programming/database/mariadb.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/hcia/openEuler.md"
+                "file": "programming/database/mariadb.md"
               }
             }
           }
@@ -171,8 +149,14 @@
   },
   "active": "0ab35ccac12d6648",
   "lastOpenFiles": [
-    "notes/hcia/kunpengIA.md",
+    "template/default.md",
+    "programming/database/mariadb.md",
+    "programming/database/mysql.md",
+    "notes/interesting-finds/interesting.md",
     "notes/hcia/openEuler.md",
+    "notes/hcia/kunpengIA.md",
+    "sysAdmin/docker/9. Docker-compose.md",
+    "sysAdmin/kubernetess/res/components-of-kubernetes.svg",
     "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
     "sysAdmin/openstack/manila.md",
     "sysAdmin/openstack/cloudykitty.md",
@@ -191,14 +175,8 @@
     "sysAdmin/kubernetess/1.1 通过 KubeAdmin 部署.md",
     "sysAdmin/kubernetess/0.3 k8s 组件.md",
     "sysAdmin/kubernetess/0.2 k8s 基础概念.md",
-    "sysAdmin/kubernetess/res/components-of-kubernetes.svg",
     "sysAdmin/docker/1. 介绍和安装.md",
-    "sysAdmin/nginx/3. 配置文件.md",
-    "sysAdmin/nginx/2. 静态站点部署.md",
-    "sysAdmin/openstack/chinaskills-ver/0-个人踩坑记录.md",
     "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
-    "sysAdmin/openstack/chinaskills-ver/案例/未命名.md",
-    "sysAdmin/linux/linux-basic/管道和重定向.md",
     "notes/hcia",
     "sysAdmin/kubernetess/geekhour",
     "sysAdmin/DevOpsPipeline/assets/Pasted image 20240729105920.png",
