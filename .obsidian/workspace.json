@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ssh",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 357.5,
+    "collapsed": true
   },
   "right": {
     "id": "80ed98c9c6bd8439",
@@ -134,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 221.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,8 +150,9 @@
   },
   "active": "0ab35ccac12d6648",
   "lastOpenFiles": [
-    "template/default.md",
     "programming/database/mariadb.md",
+    "sysAdmin/git/0. 代理配置.md",
+    "template/default.md",
     "programming/database/mysql.md",
     "notes/interesting-finds/interesting.md",
     "notes/hcia/openEuler.md",
@@ -170,7 +172,6 @@
     "sysAdmin/openstack/chinaskills-ver/案例/高可用数据库集群与负载均衡.md",
     "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
     "sysAdmin/openstack/chinaskills-ver/案例/单节点商场部署.md",
-    "sysAdmin/git/0. 代理配置.md",
     "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
     "sysAdmin/kubernetess/1.1 通过 KubeAdmin 部署.md",
     "sysAdmin/kubernetess/0.3 k8s 组件.md",

@@ -141,9 +141,10 @@ root@aliyun-sp:~# mysqladmin --version
 mysqladmin  Ver 9.1 Distrib 10.5.26-MariaDB, for debian-linux-gnu on x86_64
 ```
 
-设置数据库密码
+设置数据库默认ROOT密码
 ```shell
-root@aliyun-sp:~# mysqladmin -u root password passwd000000;
+root@aliyun-sp:~# mariadb-secure-installation
+# 设置默认密码
 
 root@aliyun-sp:~# mysql -u root -p
 Enter password: 
@@ -154,28 +155,23 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 
 创建新用户帐户
 ```sql
-MariaDB [(none)]> CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'passwd000000';
+-- 创建一个允许远程访问的用户
+MariaDB [(none)]> CREATE USER 'testuser'@'%' IDENTIFIED BY 'passwd000000';
 Query OK, 0 rows affected (0.002 sec)
 ```
 
-设置权限
+创建数据库
 ```sql
-CREATE DATABASE mydatabase;
-USE mydatabase;
-
-CREATE TABLE exampletable (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100) NOT NULL,
-  email VARCHAR(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE DATABASE gamedata;
+USE gamedata;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON database TO 'testuser'@'localhost';
 ```
 
 
-配置文件 /etc/mysql/my.cnf
+配置文件 `/etc/mysql/my.cnf`
 选择是否开放远程访问
-```shell
+```ini
 [mysqld]
-
+bind-address = 0.0.0.0
 ```
