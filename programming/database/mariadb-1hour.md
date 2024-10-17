@@ -94,7 +94,8 @@ SQL是结构化查询语言的缩写, 既可以查询, 也可以添加, 更新, 
 
 SQL语言关键字不区分大小写, 但针对不同的数据库, 对于表名和列名, 有的数据库区分大小写, 有的数据库不区分大小写. 同一个数据库, 有的在Linux上区分, 有的在Windows上不区分.
 
-## 安装MySQL
+## MariaDB
+### 安装 MariaDB
 
 MySQL只是一个SQL接口, 它的内部包含了多种数据引擎, 常用的包括
 
@@ -153,6 +154,13 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 
 ### 基础管理
 
+开放远程访问，配置文件 `/etc/mysql/my.cnf`
+```ini
+[mysqld]
+bind-address = 0.0.0.0
+```
+
+
 创建新用户帐户
 ```sql
 -- 创建一个允许远程访问的用户
@@ -164,14 +172,109 @@ Query OK, 0 rows affected (0.002 sec)
 ```sql
 CREATE DATABASE gamedata;
 USE gamedata;
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON database TO 'testuser'@'localhost';
+SHOW DATABASES; --查看数据库列表
 ```
 
-
-配置文件 `/etc/mysql/my.cnf`
-选择是否开放远程访问
-```ini
-[mysqld]
-bind-address = 0.0.0.0
+删除数据库
+```sql
+DROP DATABASE gamedata;
+SHOW DATABASES;
 ```
+
+创建表，在创建之前先选择数据库
+```sql
+CREATE DATABASE gamedata;
+USE gamedata;
+
+CREATE TABLE player(
+    id INT,
+    name VARCHAR(12),
+    level INT,
+    exp INT,
+    gold DECIMAL(10,2)
+)
+
+DESC player; --描述表的结构
+```
+
+> MySQL 数据类型大致可以分为五个大的类别，包括数值类型，日期和时间类型，字符串类型，JSON类型和空间类型，每种类型也包含不同的子类型。
+
+修改字段的属性
+```sql
+ALTER table player MODIFY COLUMN name VARCHAR(20);
+```
+
+字段的名称修改
+```sql
+ALTER TABLE player RENAME COLUMN name to nick_name;
+```
+
+增加新的字段
+```sql
+ALTER TABLE player ADD COLUMN last_login datetime;
+```
+
+删除字段
+```sql
+ALTER TABLE player DROP COLUMN last_login;
+```
+
+删除表
+```sql
+DROP TABLE player;
+```
+
+### 操作表 (增删改查)
+
+插入数据
+```sql
+INSERT INTO user (id, name, age) VALUES (1, '李子龙', 18);
+
+SELECT * FROM user;
+```
+
+INSERT 也可以插入多条数据，直接用逗号隔开
+```sql
+INSERT INTO user (id, name, age) VALUES (1, '李子龙', 18), (2, '李父龙', 18);
+```
+
+为字段设置默认值
+```sql
+ALTER TABLE user MODIFY age INT DEFAULT 1;
+INSERT INTO user (id, name) VALUES (1, '子龙'), (2, '李父父龙');
+```
+
+> 此时插入数据不指定 age 已经默认为 1 了。
+> 也可以在建表的时候指定一个默认值，也可以使用 NULL 或者 NOT NULL 指定是否允许为空值，或者使用 UNIQUE 指定字段是否唯一，除此之外还有
+> 主键约束：保证数据的唯一性且不为空
+> 外键约束：一个表的外键必须是另一个表的主键
+
+这里有个小问题，之前插入的等级还是 NONE
+修改已存在的数据化
+```sql
+UPDATE user set age=18 WHERE name='子龙';
+```
+
+删除表中的数据
+```sql
+DELETE FROM user WHERE age is NULL;
+DELETE FROM user WHERE age=18;
+```
+
+### 导入导出
+
+导出数据库
+```shell
+mysqldump -u root -p dbname tablename > db.sql
+```
+
+> [!tip]
+> dbname 代表数据库，tablename 代表数据表
+> 如果不加 tablename 则导出整个 dbname
+
+导入数据库
+```shell
+mysql -u root -p dbname < game.sql
+```
+
+### 常用语句

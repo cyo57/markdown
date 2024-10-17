@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "programming/database/mariadb.md",
+                "file": "programming/database/mariadb-1hour.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "programming/database/mariadb.md",
+                "file": "programming/database/mariadb-1hour.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "programming/database/mariadb.md",
+                "file": "programming/database/mariadb-1hour.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "programming/database/mariadb.md"
+                "file": "programming/database/mariadb-1hour.md"
               }
             }
           }
@@ -150,7 +150,7 @@
   },
   "active": "0ab35ccac12d6648",
   "lastOpenFiles": [
-    "programming/database/mariadb.md",
+    "programming/database/mariadb-1hour.md",
     "sysAdmin/git/0. 代理配置.md",
     "template/default.md",
     "programming/database/mysql.md",
