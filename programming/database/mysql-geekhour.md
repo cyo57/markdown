@@ -4,6 +4,7 @@ tags:
   - database
   - mysql
 date: "241011"
+origin: geekhour
 ---
 # SQL
 
@@ -278,3 +279,15 @@ mysql -u root -p dbname < game.sql
 ```
 
 ### 常用语句
+
+> [!tip]
+> 这里导入了 GeekHour 课程的 [练习配套数据](https://github.com/geekhournet/mysql-course) 进行学习
+> 
+> 若你使用 `MariaDB`，可以将 SQL 文件中的 `COLLATE=utf8mb4_0900_ai_ci` 修改为 `COLLATE=utf8mb4_unicode_520_ci`
+
+查找多个条件的数据
+```sql
+SELECT * FROM player WHERE level > 1 and level < 5;
+```
+
+优先级顺序是 NOT > AND > OR

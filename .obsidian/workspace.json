@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "programming/database/mariadb-1hour.md",
+                "file": "programming/database/mysql-geekhour.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ssh",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "programming/database/mariadb-1hour.md",
+                "file": "programming/database/mysql-geekhour.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "programming/database/mariadb-1hour.md",
+                "file": "programming/database/mysql-geekhour.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "programming/database/mariadb-1hour.md"
+                "file": "programming/database/mysql-geekhour.md"
               }
             }
           }
@@ -135,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -150,8 +150,8 @@
   },
   "active": "0ab35ccac12d6648",
   "lastOpenFiles": [
-    "programming/database/mariadb-1hour.md",
-    "sysAdmin/git/0. 代理配置.md",
+    "programming/database/mysql-geekhour.md",
+    "programming/database/mariadb.md",
     "template/default.md",
     "programming/database/mysql.md",
     "notes/interesting-finds/interesting.md",
@@ -172,11 +172,11 @@
     "sysAdmin/openstack/chinaskills-ver/案例/高可用数据库集群与负载均衡.md",
     "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
     "sysAdmin/openstack/chinaskills-ver/案例/单节点商场部署.md",
+    "sysAdmin/git/0. 代理配置.md",
     "sysAdmin/kubernetess/1.1.2 通过 KubeKey 部署.md",
     "sysAdmin/kubernetess/1.1 通过 KubeAdmin 部署.md",
     "sysAdmin/kubernetess/0.3 k8s 组件.md",
     "sysAdmin/kubernetess/0.2 k8s 基础概念.md",
-    "sysAdmin/docker/1. 介绍和安装.md",
     "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
     "notes/hcia",
     "sysAdmin/kubernetess/geekhour",
