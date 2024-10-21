@@ -288,6 +288,175 @@ mysql -u root -p dbname < game.sql
 查找多个条件的数据
 ```sql
 SELECT * FROM player WHERE level > 1 and level < 5;
+
+SELECT * FROM player
+WHERE level > 1 AND level < 5 OR exp > 1 AND exp < 5;
+
+SELECT * FROM player
+WHERE level > 1 AND (level < 5 OR exp > 1) AND exp < 5;
 ```
 
-优先级顺序是 NOT > AND > OR
+优先级顺序是 NOT > AND > OR，除非被括号`()`改变优先级
+
+
+使用 IN 指定查找多个值
+```sql
+-- 查找等级为 1/3/5 的玩家
+SELECT * FROM player
+WHERE level IN (1,3,5);
+```
+
+
+使用 BETWEEN / END 查找指定范围的值
+```sql
+SELECT * FROM player
+WHERE level BETWEEN 1 AND 10;
+-- 等同于 >= 1 and <= 10
+```
+
+
+使用 NOT 取反
+```sql
+SELECT * FROM player
+WHERE level NOT BETWEEN 1 AND 10;
+-- NOT 可以加在任何条件语句前
+```
+
+
+使用 LIKE 模糊查找，`%`表示任意n个字符，`_`表示任意一个字符
+```sql
+SELECT * FROM player
+WHERE name LIKE '王%';
+
+SELECT * FROM player
+WHERE name LIKE '%王%';
+
+SELECT * FROM player
+WHERE name LIKE '王_';
+```
+
+
+使用 REGEXP 正则表达式查找
+```sql
+SELECT * FROM player
+WHERE name REGEXP 'PATTRN';
+
+SELECT * FROM player
+WHERE name REGEXP '^王.$';
+```
+
+
+使用 IS NULL 查找空结果
+> [!warning]
+> 有些字段是空字符串而不是 NULL ，NULL表示没有值
+> 查询时推荐 `WHERE email IS NULL or email = ''`
+
+```sql
+SELECT * FROM player
+WHERE email IS NULL;
+
+SELECT * FROM player
+WHERE email IS NOT NULL;
+```
+
+
+ORDER BY 依据某个字段排列
+```sql
+SELECT * FROM player
+ORDER BY level;
+-- 默认为升序
+
+SELECT * FROM player
+ORDER BY level DESC;
+-- 降序排列
+
+SELECT * FROM player
+ORDER BY level DESC, exp DESC;
+-- 多个条件排列，等级相同则按照经验排列
+
+SELECT * FROM player
+ORDER BY 5;
+-- 按照列序号排序（第五列）
+```
+
+
+聚合函数，对某列进行一些计算
+
+| 函数名   | 作用  |
+| ----- | --- |
+| AVG   | 平均值 |
+| COUNT | 项目数 |
+| MAX   | 最大值 |
+| MIN   | 最小值 |
+| SUM   | 求和  |
+| ...   | ... |
+```sql
+SELECT COUNT(*) FROM player;
+-- 查询总人数
+
+SELECT AVG(level) FROM player;
+-- 查询平均值
+```
+
+
+GROUP BY 分组查询
+```sql
+SELECT sex, COUNT(*) FROM player
+GROUP BY sex;
+-- 每个性别的玩家有多少名
+
+SELECT level, COUNT(level) FROM player
+GROUP BY level;
+-- 每个等级的玩家有多少名
+```
+
+
+HAVING 过滤分组后的结果
+```sql
+SELECT level, COUNT(level) FROM player
+GROUP BY level
+HAVING count(level) > 4;
+-- 只统计玩家数大于四的等级
+
+SELECT level, COUNT(level) FROM player
+GROUP BY level
+HAVING level > 4;
+-- 只统计等级大于四的玩家
+
+SELECT level, COUNT(level) FROM player
+GROUP BY level
+HAVING level > 4
+ORDER BY level DESC;
+-- 只统计等级大于四的玩家，并降序排列
+```
+
+
+LIMIT 限制数量
+```sql
+SELECT level, COUNT(level) FROM player
+GROUP BY level
+ORDER BY level DESC
+LIMIT 5;
+-- 只统计等级大于四的玩家，并降序排列，只统计前五个
+
+SELECT level, COUNT(level) FROM player
+GROUP BY level
+ORDER BY level DESC
+LIMIT 3,3;
+-- 只统计等级大于四的玩家，并降序排列
+-- LIMIT 偏移量,数量 此处相当于从第四名开始，返回三个
+```
+
+
+
+> [!tip]
+> 小练习
+> 统计表中每个玩家的数量，倒序排列，只显示数量大于等于5的姓
+
+```sql
+-- SUBSTR 参数分别为截取的字符串，开始，结束位置
+SELECT SUBSTR(username,1,1) AS 姓, COUNT(SUBSTR(username,1,1)) AS 数量 FROM student
+GROUP BY SUBSTR(username,1,1)
+HAVING COUNT(SUBSTR(username,1,1)) >= 5
+ORDER BY COUNT(SUBSTR(username,1,1)) DESC;
+```
