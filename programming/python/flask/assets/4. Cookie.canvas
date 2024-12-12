@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"2cffa6bea387b4ff","type":"text","text":"# 服务器\n2. 验证账号密码并返回 cookie\n5. 服务器验证 cookie 判断用户，返回对应的数据","x":-359,"y":260,"width":878,"height":167},
+		{"id":"d6d42b0fa8daf041","type":"text","text":"# 浏览器A\n1. 登录，发送请求\n3. 保存 cookie 到本地\n4. 再次请求将携带 cookie","x":-359,"y":-60,"width":439,"height":167},
+		{"id":"2f46c8d943b0feb7","type":"text","text":"# 浏览器B","x":180,"y":-60,"width":339,"height":167}
+	],
+	"edges":[
+		{"id":"2bdfb1c8985bf089","fromNode":"d6d42b0fa8daf041","fromSide":"bottom","toNode":"2cffa6bea387b4ff","toSide":"top"},
+		{"id":"330b2df145ec4797","fromNode":"2cffa6bea387b4ff","fromSide":"top","toNode":"d6d42b0fa8daf041","toSide":"bottom"},
+		{"id":"83984fcc0c7be1c7","fromNode":"2f46c8d943b0feb7","fromSide":"bottom","toNode":"2cffa6bea387b4ff","toSide":"top"},
+		{"id":"e48325981c602009","fromNode":"2cffa6bea387b4ff","fromSide":"top","toNode":"2f46c8d943b0feb7","toSide":"bottom"}
+	]
+}

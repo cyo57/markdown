@@ -1,18 +1,20 @@
+---
+tags:
+  - readme
+Created: "20241204"
+Modified:
+---
 # Personal Markdown Repository
 
-## 项目简介
+使用 Obsidian 进行仓库管理
 
-存放了学习和工作笔记，涵盖了多个领域，包括编程、设计、Linux运维等。
+## 规范
 
+目录
+- 需要归类到相应分类下
+- 目录下若包含素材则保存在 `assets`，例如画布、图片等
 
-## 目录
-
-- [编程](./Programming/)
-- [设计](Design)
-- [Linux运维](./SysAdmin)
-- [笔记](./Notes)
-- [其他](./Other)
-
-## 联系方式
-
-如果有任何问题或建议，请[进入这里](https://ys.mihoyo.com/)。
+文件
+- 创建 Obsidian 笔记属性
+- 笔记命名：0.XX 1.XX 2.XX
+- 0.XX 笔记属性 tag 需关联上级分类，例如 Flask 笔记需要关联 `python` `flask`，而其他文件 1.XX 2.XX 只需关联 `flask`

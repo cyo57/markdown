@@ -1,8 +1,8 @@
 {
   "uploadByClipSwitch": true,
   "uploader": "PicGo",
-  "uploadServer": "http://127.0.0.1:36677/upload",
-  "deleteServer": "http://127.0.0.1:36677/delete",
+  "uploadServer": "https://picgo.mistudio.top/upload?picbed=github&key=piclist123456",
+  "deleteServer": "https://picgo.mistudio.top/delete?picbed=github&key=piclist123456",
   "imageSizeSuffix": "",
   "picgoCorePath": "",
   "workOnNetWork": false,
@@ -11,5 +11,5 @@
   "newWorkBlackDomains": "",
   "deleteSource": false,
   "imageDesc": "origin",
-  "remoteServerMode": false
+  "remoteServerMode": true
 }

@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"ea0100042c5ce3a9","type":"text","text":"路由\nRoute","x":-61,"y":-30,"width":141,"height":60},
+		{"id":"7cb2b855343f5321","type":"text","text":"客户端","x":-260,"y":-30,"width":140,"height":60},
+		{"id":"d094416d944442c1","type":"text","text":"视图\nViews","x":140,"y":-30,"width":140,"height":60},
+		{"id":"d5947b9164049f76","type":"text","text":"模型\nModels","x":340,"y":-30,"width":140,"height":60},
+		{"id":"a8c14190134cb3b6","type":"text","text":"模板\nTemplates","x":140,"y":160,"width":140,"height":60},
+		{"id":"bbf71213a31917a2","type":"text","text":"数据库\nMySQL","x":340,"y":160,"width":140,"height":60}
+	],
+	"edges":[
+		{"id":"b35d99acf650ff1f","fromNode":"7cb2b855343f5321","fromSide":"right","toNode":"ea0100042c5ce3a9","toSide":"left"},
+		{"id":"7a96baeb56f4e2c2","fromNode":"ea0100042c5ce3a9","fromSide":"right","toNode":"d094416d944442c1","toSide":"left"},
+		{"id":"0775f41463f8d632","fromNode":"d094416d944442c1","fromSide":"bottom","toNode":"a8c14190134cb3b6","toSide":"top"},
+		{"id":"82c4ec227dc970d0","fromNode":"d094416d944442c1","fromSide":"right","toNode":"d5947b9164049f76","toSide":"left"},
+		{"id":"f842c1c3e0a52e52","fromNode":"d5947b9164049f76","fromSide":"bottom","toNode":"bbf71213a31917a2","toSide":"top","label":"ORM"},
+		{"id":"8622fa92844457a2","fromNode":"bbf71213a31917a2","fromSide":"top","toNode":"d5947b9164049f76","toSide":"bottom"},
+		{"id":"7577540a96a07f37","fromNode":"d5947b9164049f76","fromSide":"left","toNode":"d094416d944442c1","toSide":"right"},
+		{"id":"6caa2fbf911e5714","fromNode":"a8c14190134cb3b6","fromSide":"left","toNode":"7cb2b855343f5321","toSide":"bottom","color":"1"}
+	]
+}

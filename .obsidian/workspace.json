@@ -4,67 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "b204a06431cf4b5a",
+        "id": "6efe6787b1d251eb",
         "type": "tabs",
         "children": [
           {
-            "id": "8b0f341c7e8e286f",
+            "id": "4b3875faafe4bcee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "314notes/0.1 KubeEdge.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "0.1 KubeEdge"
-            }
-          },
-          {
-            "id": "97da81fe4136cf4d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "314notes/0.2 边缘AI场景.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "0.2 边缘AI场景"
-            }
-          },
-          {
-            "id": "3f10ccfdbbbbefbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sysAdmin/docker/2. 常用命令.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2. 常用命令"
-            }
-          },
-          {
-            "id": "4c4619bbf2e7f8b4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "6. DockerFile"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,9 +48,9 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dockerfile",
+                "query": "daemon.json",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
@@ -115,13 +68,23 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "2170b80033ac4f3b",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 390.5
   },
   "right": {
     "id": "80ed98c9c6bd8439",
@@ -182,11 +145,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "sysAdmin/docker/6. DockerFile.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "6. DockerFile 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -194,7 +155,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 332.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,37 +168,44 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "4c4619bbf2e7f8b4",
+  "active": "4b3875faafe4bcee",
   "lastOpenFiles": [
-    "sysAdmin/docker/2. 常用命令.md",
+    "未命名.canvas",
     "sysAdmin/docker/1. 介绍和安装.md",
-    "314notes/1.1 模型训练.md",
-    "314notes/0.2 边缘AI场景.md",
+    "sysAdmin/git/0. 代理配置.md",
+    "programming/python/flask/6. Model.md",
+    "programming/python/flask/5. Template 语法.md",
+    "programming/python/flask/4. Flask 请求与响应.md",
+    "programming/python/flask/1. Flask 模板渲染.md",
+    "programming/python/flask/3. Flask 路由参数.md",
+    "programming/python/flask/assets/4. Cookie.canvas",
+    "programming/python/flask/2. Flask 拆分项目.md",
+    "template/default.md",
+    "template/linux-project.md",
+    "template/openstack.md",
+    "template/reading-notes.md",
+    "programming/python/flask/assets/0.Flask流程.canvas",
+    "programming/python/flask/0. Flask.md",
+    "README.md",
+    "sysAdmin/docker/canvas/docker 整体架构.canvas",
+    "programming/tensorflow/0.1 基本介绍.md",
+    "programming/python/flask/assets",
+    "programming/python/FluentPython.md",
+    "programming/python/PySide6.md",
+    "programming/conda/1.1 Conda使用.md",
+    "programming/python/flask",
+    "programming/conda",
     "314notes/0.1 KubeEdge.md",
+    "314notes/0.2 边缘AI场景.md",
+    "sysAdmin/docker/2. 常用命令.md",
+    "sysAdmin/docker/6. DockerFile.md",
+    "programming/sqlite3/1. SQLite 语法和数据类型.md",
+    "programming/sqlite3/2. 数据库操作.md",
+    "programming/sqlite3/0. 介绍和安装.md",
+    "programming/tensorflow",
     "未命名",
     "314notes",
-    "programming/database/mysql-geekhour.md",
-    "programming/database/mariadb.md",
-    "template/default.md",
-    "programming/database/mysql.md",
-    "notes/interesting-finds/interesting.md",
-    "notes/hcia/openEuler.md",
-    "notes/hcia/kunpengIA.md",
-    "sysAdmin/docker/9. Docker-compose.md",
     "sysAdmin/kubernetess/res/components-of-kubernetes.svg",
-    "sysAdmin/openstack/chinaskills-ver/old.1-Install-Doc.md",
-    "sysAdmin/openstack/manila.md",
-    "sysAdmin/openstack/cloudykitty.md",
-    "sysAdmin/openstack/cinder.md",
-    "sysAdmin/openstack/barbican.md",
-    "sysAdmin/openstack/chinaskills-ver/Ansible部署OpenStack.md",
-    "sysAdmin/openstack/chinaskills-ver/2. OpenStack CLI 基本操作.md",
-    "sysAdmin/openstack/chinaskills-ver/1. OpenStack 的安装和基本操作.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/Openstack 参数调优.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/启用HTTPS.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/高可用数据库集群与负载均衡.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/多节点商场集群化部署.md",
-    "sysAdmin/openstack/chinaskills-ver/案例/单节点商场部署.md",
     "sysAdmin/openstack/chinaskills-ver/搭建流程.canvas",
     "notes/hcia",
     "sysAdmin/kubernetess/geekhour",
@@ -253,8 +221,6 @@
     "sysAdmin/docker/assets/Pasted image 20240710111625.png",
     "sysAdmin/docker/assets/Pasted image 20240710110429.png",
     "sysAdmin/docker/assets/Pasted image 20240708145828.png",
-    "sysAdmin/docker/assets",
-    "sysAdmin/docker/canvas/虚拟机与Docker对比.canvas",
-    "programming/vue3"
+    "sysAdmin/docker/canvas/虚拟机与Docker对比.canvas"
   ]
 }
